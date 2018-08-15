@@ -18,6 +18,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado ResultadoMetodo = metodosraices.MetodoBiseccion(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.0001, ValorInicial = 1, ValorFinal = 5 });
 
             Assert.AreEqual(ResultadoMetodo.Raiz, res.Raiz);
+            //HOLA CHAU
         }
     }
 }
