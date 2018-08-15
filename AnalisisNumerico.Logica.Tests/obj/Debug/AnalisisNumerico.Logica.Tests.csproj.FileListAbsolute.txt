@@ -1,0 +1,12 @@
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Logica.Tests.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Logica.Tests.pdb
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\obj\Debug\AnalisisNumerico.Logica.Tests.csprojResolveAssemblyReference.cache
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\obj\Debug\AnalisisNumerico.Logica.Tests.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\obj\Debug\AnalisisNumerico.Logica.Tests.pdb
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Entidades.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Logica.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\MathParser.org-mXparser.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Entidades.pdb
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica.Tests\bin\Debug\AnalisisNumerico.Logica.pdb

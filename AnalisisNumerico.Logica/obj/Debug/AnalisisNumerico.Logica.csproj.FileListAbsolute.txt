@@ -1,0 +1,8 @@
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Logica.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Logica.pdb
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Entidades.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\MathParser.org-mXparser.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\bin\Debug\AnalisisNumerico.Entidades.pdb
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.csprojResolveAssemblyReference.cache
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.dll
+E:\Analisis Numerico\AnalisisNumerico\AnalisisNumerico.Logica\obj\Debug\AnalisisNumerico.Logica.pdb
