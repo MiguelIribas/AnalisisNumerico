@@ -8,17 +8,15 @@ namespace AnalisisNumerico.UI
 {
     static class Program
     {
-        private static Container container;
+        internal static Container container;
 
         [STAThread]
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
             Application.Run(container.GetInstance<InicioForm>());
-
         }
 
         private static void Bootstrap()
@@ -27,13 +25,9 @@ namespace AnalisisNumerico.UI
             container = new Container();
 
             // Register your types, for instance:
-            container.Register<IMetodosRaices, MetodosRaices>();
+            container.Register<IMetodosRaices, Logica.Unidad_1.MetodosCerrados>();
             container.Register<InicioForm>();
-
-            // Optionally verify the container.
-            container.Verify();
+            container.Register<Biseccion>();
         }
-
-
     }
 }

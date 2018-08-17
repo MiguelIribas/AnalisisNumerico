@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnalisisNumerico.Entidades;
-using AnalisisNumerico.Logica;
+using AnalisisNumerico.Logica.Unidad_1;
 
 namespace AnalisisNumerico.Logica.Tests
 {
@@ -11,14 +11,27 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Biseccion()
         {
-            MetodosRaices metodosraices = new MetodosRaices();
+            MetodosCerrados Biseccion = new MetodosCerrados();
             Resultado res = new Resultado();
-            res.Raiz = 2;
+            res.Raiz = 3;
 
-            Resultado ResultadoMetodo = metodosraices.MetodoBiseccion(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.0001, ValorInicial = 1, ValorFinal = 5 });
+            Resultado ResultadoMetodoBiseccion = Biseccion.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 100, Tolerancia = 0.001, ValorInicial = 1, ValorFinal = 5 , TipoMetodoCerrado=TipoMetodoCerrado.Biseccion});
 
-            Assert.AreEqual(ResultadoMetodo.Raiz, res.Raiz);
-            //HOLA CHAU
+            Assert.AreEqual(ResultadoMetodoBiseccion.Raiz, res.Raiz);
+
         }
+
+        [TestMethod]
+        public void ReglaFalsa()
+        {
+            MetodosCerrados ReglaFalsa = new MetodosCerrados();
+            Resultado res = new Resultado();
+            res.Raiz = 3;
+
+            Resultado ResultadoMetodoReglaFalsa = ReglaFalsa.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.001, ValorInicial = 1, ValorFinal = 5, TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa });
+            Assert.IsTrue(ResultadoMetodoReglaFalsa.Raiz > 2.999 && ResultadoMetodoReglaFalsa.Raiz < 3.001);
+
+        }
+
     }
 }

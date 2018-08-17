@@ -11,5 +11,12 @@
         public int Iteraciones { get; set; }
 
         public double Tolerancia { get; set; }
+
+        public TipoMetodoCerrado TipoMetodoCerrado { get; set; }
     }
+}
+
+public enum TipoMetodoCerrado
+{
+    Biseccion, ReglaFalsa
 }

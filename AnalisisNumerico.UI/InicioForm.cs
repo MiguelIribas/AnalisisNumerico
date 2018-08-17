@@ -29,7 +29,7 @@ namespace AnalisisNumerico.UI
 
         private void bISECCIONToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Biseccion FormularioBiseccion = new Biseccion();
+            Biseccion FormularioBiseccion = Program.container.GetInstance<Biseccion>();
             FormularioBiseccion.Owner = this;
             FormularioBiseccion.ShowDialog();
         }

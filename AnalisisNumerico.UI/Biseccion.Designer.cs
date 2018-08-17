@@ -142,6 +142,7 @@
             this.btnCalcular.TabIndex = 10;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // Raiz
             // 
