@@ -32,8 +32,6 @@
             this.uNIDADIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mETODOSCERRADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mETODOSABIERTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bISECCIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGLAFALSAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nEWTONRAPHSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sECANTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sISTEMADEECUACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,12 +71,10 @@
             // 
             // mETODOSCERRADOSToolStripMenuItem
             // 
-            this.mETODOSCERRADOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bISECCIONToolStripMenuItem,
-            this.rEGLAFALSAToolStripMenuItem});
             this.mETODOSCERRADOSToolStripMenuItem.Name = "mETODOSCERRADOSToolStripMenuItem";
             this.mETODOSCERRADOSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.mETODOSCERRADOSToolStripMenuItem.Text = "METODOS CERRADOS";
+            this.mETODOSCERRADOSToolStripMenuItem.Click += new System.EventHandler(this.MetodosCerradosToolStripMenuItem_Click);
             // 
             // mETODOSABIERTOSToolStripMenuItem
             // 
@@ -88,19 +84,6 @@
             this.mETODOSABIERTOSToolStripMenuItem.Name = "mETODOSABIERTOSToolStripMenuItem";
             this.mETODOSABIERTOSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.mETODOSABIERTOSToolStripMenuItem.Text = "METODOS ABIERTOS";
-            // 
-            // bISECCIONToolStripMenuItem
-            // 
-            this.bISECCIONToolStripMenuItem.Name = "bISECCIONToolStripMenuItem";
-            this.bISECCIONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bISECCIONToolStripMenuItem.Text = "BISECCION";
-            this.bISECCIONToolStripMenuItem.Click += new System.EventHandler(this.bISECCIONToolStripMenuItem_Click);
-            // 
-            // rEGLAFALSAToolStripMenuItem
-            // 
-            this.rEGLAFALSAToolStripMenuItem.Name = "rEGLAFALSAToolStripMenuItem";
-            this.rEGLAFALSAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rEGLAFALSAToolStripMenuItem.Text = "REGLA FALSA";
             // 
             // nEWTONRAPHSONToolStripMenuItem
             // 
@@ -206,8 +189,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem uNIDADIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSCERRADOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bISECCIONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rEGLAFALSAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSABIERTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nEWTONRAPHSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sECANTEToolStripMenuItem;

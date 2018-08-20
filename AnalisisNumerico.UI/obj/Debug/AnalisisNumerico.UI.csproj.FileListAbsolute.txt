@@ -30,9 +30,9 @@ E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Entidades.pd
 E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\SimpleInjector.xml
 E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csprojResolveAssemblyReference.cache
-E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Biseccion.resources
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.InicioForm.resources
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.GenerateResource.Cache
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.pdb
 E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.UI.exe
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.exe
+E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMetodosCerrados.resources

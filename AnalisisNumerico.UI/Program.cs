@@ -27,7 +27,7 @@ namespace AnalisisNumerico.UI
             // Register your types, for instance:
             container.Register<IMetodosRaices, Logica.Unidad_1.MetodosCerrados>();
             container.Register<InicioForm>();
-            container.Register<Biseccion>();
+            container.Register<FormularioMetodosCerrados>();
         }
     }
 }

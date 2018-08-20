@@ -27,9 +27,9 @@ namespace AnalisisNumerico.UI
 
         }
 
-        private void bISECCIONToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MetodosCerradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Biseccion FormularioBiseccion = Program.container.GetInstance<Biseccion>();
+            FormularioMetodosCerrados FormularioBiseccion = Program.container.GetInstance<FormularioMetodosCerrados>();
             FormularioBiseccion.Owner = this;
             FormularioBiseccion.ShowDialog();
         }

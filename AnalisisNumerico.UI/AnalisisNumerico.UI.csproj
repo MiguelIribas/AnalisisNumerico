@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Biseccion.cs">
+    <Compile Include="FormularioMetodosCerrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Biseccion.Designer.cs">
-      <DependentUpon>Biseccion.cs</DependentUpon>
+    <Compile Include="FormularioMetodosCerrados.Designer.cs">
+      <DependentUpon>FormularioMetodosCerrados.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioForm.cs">
       <SubType>Form</SubType>
@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Biseccion.resx">
-      <DependentUpon>Biseccion.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioMetodosCerrados.resx">
+      <DependentUpon>FormularioMetodosCerrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>

@@ -11,7 +11,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
     public class MetodosCerrados : IMetodosRaices
     {
         
-
         public Resultado MetodoBiseccion(ParametrosBiseccion parametros)
         {
             throw new NotImplementedException();
