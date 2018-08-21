@@ -23,7 +23,28 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            ParametrosBiseccion parametros = new ParametrosBiseccion();
 
+            parametros.Funcion = txtboxFuncion.Text;
+            parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
+            parametros.Tolerancia = Convert.ToDouble(txtboxTolerancia.Text);
+            parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMinimo.Text);
+            parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text);
+
+            Resultado resultado = new Resultado();
+               
+            if (comboMetodo.Text=="BISECCION")
+            {
+                parametros.TipoMetodoCerrado = TipoMetodoCerrado.Biseccion;
+                resultado=this.metodosRaices.MetodoBiseccion(parametros);
+            }
+            else
+            {
+                parametros.TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa;
+                resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
+            }
+
+            labelResultado.Text = "Raiz" + resultado.Raiz + " - Iteraciones: " + resultado.Iteraciones;
         }
 
         private void MetodosCerrados_Load(object sender, EventArgs e)

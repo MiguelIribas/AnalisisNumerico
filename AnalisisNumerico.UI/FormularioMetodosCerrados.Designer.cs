@@ -70,7 +70,7 @@
             // 
             this.Tolerancia.AutoSize = true;
             this.Tolerancia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tolerancia.Location = new System.Drawing.Point(47, 233);
+            this.Tolerancia.Location = new System.Drawing.Point(47, 185);
             this.Tolerancia.Name = "Tolerancia";
             this.Tolerancia.Size = new System.Drawing.Size(108, 18);
             this.Tolerancia.TabIndex = 3;
@@ -79,7 +79,7 @@
             // txtboxTolerancia
             // 
             this.txtboxTolerancia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxTolerancia.Location = new System.Drawing.Point(173, 233);
+            this.txtboxTolerancia.Location = new System.Drawing.Point(173, 181);
             this.txtboxTolerancia.Name = "txtboxTolerancia";
             this.txtboxTolerancia.Size = new System.Drawing.Size(100, 26);
             this.txtboxTolerancia.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.Iteraciones.AutoSize = true;
             this.Iteraciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Iteraciones.Location = new System.Drawing.Point(47, 190);
+            this.Iteraciones.Location = new System.Drawing.Point(47, 236);
             this.Iteraciones.Name = "Iteraciones";
             this.Iteraciones.Size = new System.Drawing.Size(113, 18);
             this.Iteraciones.TabIndex = 5;
@@ -97,7 +97,7 @@
             // txtboxIteraciones
             // 
             this.txtboxIteraciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxIteraciones.Location = new System.Drawing.Point(173, 191);
+            this.txtboxIteraciones.Location = new System.Drawing.Point(173, 224);
             this.txtboxIteraciones.Name = "txtboxIteraciones";
             this.txtboxIteraciones.Size = new System.Drawing.Size(100, 26);
             this.txtboxIteraciones.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             this.LimiteMinimo.AutoSize = true;
             this.LimiteMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimiteMinimo.Location = new System.Drawing.Point(319, 141);
+            this.LimiteMinimo.Location = new System.Drawing.Point(319, 184);
             this.LimiteMinimo.Name = "LimiteMinimo";
             this.LimiteMinimo.Size = new System.Drawing.Size(115, 18);
             this.LimiteMinimo.TabIndex = 9;
@@ -115,7 +115,7 @@
             // txtboxLimiteMinimo
             // 
             this.txtboxLimiteMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLimiteMinimo.Location = new System.Drawing.Point(448, 142);
+            this.txtboxLimiteMinimo.Location = new System.Drawing.Point(448, 177);
             this.txtboxLimiteMinimo.Name = "txtboxLimiteMinimo";
             this.txtboxLimiteMinimo.Size = new System.Drawing.Size(100, 26);
             this.txtboxLimiteMinimo.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             this.LimiteMaximo.AutoSize = true;
             this.LimiteMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimiteMaximo.Location = new System.Drawing.Point(319, 184);
+            this.LimiteMaximo.Location = new System.Drawing.Point(319, 141);
             this.LimiteMaximo.Name = "LimiteMaximo";
             this.LimiteMaximo.Size = new System.Drawing.Size(123, 18);
             this.LimiteMaximo.TabIndex = 7;
@@ -133,7 +133,7 @@
             // txtboxLimiteMaximo
             // 
             this.txtboxLimiteMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLimiteMaximo.Location = new System.Drawing.Point(448, 182);
+            this.txtboxLimiteMaximo.Location = new System.Drawing.Point(448, 135);
             this.txtboxLimiteMaximo.Name = "txtboxLimiteMaximo";
             this.txtboxLimiteMaximo.Size = new System.Drawing.Size(100, 26);
             this.txtboxLimiteMaximo.TabIndex = 6;

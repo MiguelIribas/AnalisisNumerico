@@ -13,12 +13,12 @@ namespace AnalisisNumerico.Logica.Unidad_1
         
         public Resultado MetodoBiseccion(ParametrosBiseccion parametros)
         {
-            throw new NotImplementedException();
+            return this.MetodoRaiz(parametros);
         }
 
         public Resultado MetodoReglaFalsa(ParametrosBiseccion parametros)
         {
-            throw new NotImplementedException();
+            return this.MetodoRaiz(parametros);
         }
 
         public Resultado MetodoRaiz(ParametrosBiseccion parametros)

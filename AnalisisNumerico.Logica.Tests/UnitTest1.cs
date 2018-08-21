@@ -28,7 +28,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 3;
 
-            Resultado ResultadoMetodoReglaFalsa = ReglaFalsa.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.001, ValorInicial = 1, ValorFinal = 5, TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa });
+            Resultado ResultadoMetodoReglaFalsa = ReglaFalsa.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.001, ValorInicial = 2, ValorFinal = 4, TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa });
             Assert.IsTrue(ResultadoMetodoReglaFalsa.Raiz > 2.999 && ResultadoMetodoReglaFalsa.Raiz < 3.001);
 
         }
