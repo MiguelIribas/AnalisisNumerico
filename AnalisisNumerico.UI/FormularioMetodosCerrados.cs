@@ -44,7 +44,8 @@ namespace AnalisisNumerico.UI
                 resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
             }
 
-            labelResultado.Text = "Raiz" + resultado.Raiz + " - Iteraciones: " + resultado.Iteraciones;
+            labelResultado.Text = resultado.Mensaje;
+            txtRaiz.Text = Convert.ToString(resultado.Raiz);
         }
 
         private void MetodosCerrados_Load(object sender, EventArgs e)

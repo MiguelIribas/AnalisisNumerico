@@ -6,11 +6,14 @@ using org.mariuszgromada.math.mxparser;
 public delegate void Delegado();
 
 
+//DELEGADO
+//HACER EL FORMULARIO (PASAR BIEN LOS DATOS)
+//OPTIMIZAR EL CODIGO
+
 namespace AnalisisNumerico.Logica.Unidad_1
 {
     public class MetodosCerrados : IMetodosRaices
     {
-        
         public Resultado MetodoBiseccion(ParametrosBiseccion parametros)
         {
             return this.MetodoRaiz(parametros);
@@ -80,10 +83,54 @@ namespace AnalisisNumerico.Logica.Unidad_1
             }
 
             contador += 1;
+
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
 
-            while (fXr >= parametros.Tolerancia || ErrorRelativo >= parametros.Tolerancia || contador < parametros.Iteraciones)
+            if (fXr==0)
+            {
+                res.Raiz = Xr;
+                res.Mensaje = "Se encontró la raiz";
+                res.Iteraciones = contador;
+                res.Error = ErrorRelativo;
+
+                return res;
+            }
+            
+
+            //if (Xr == 0)
+            //{
+            //    if (Math.Abs(fXr) < parametros.Tolerancia || contador > parametros.Iteraciones)
+            //    {
+            //        //calcular resultado
+            //        return res;
+            //    }
+            //    else
+            //    {
+            //        if ((fXi * fXr) > 0)
+            //        {
+            //            x1 = Xr;
+            //        }
+            //        else
+            //        {
+            //            x2 = Xr;
+            //        }
+            //        Xant = Xr;
+
+            //        if (parametros.TipoMetodoCerrado == TipoMetodoCerrado.Biseccion)
+            //        {
+            //            Xr = AveriguarXrBiseccion(x1, x2);
+            //        }
+            //        else
+            //        {
+            //            Xr = AveriguarXrReglaFalsa(x1, x2, fXd, fXi);
+            //        }
+            //    }
+            //}
+
+            
+
+            while ((Math.Abs(fXr) >= parametros.Tolerancia || ((ErrorRelativo >= parametros.Tolerancia) && (Xr!=0)) || (contador < parametros.Iteraciones)))
             {
                 if ((fXi * fXr) > 0)
                 {
@@ -112,17 +159,18 @@ namespace AnalisisNumerico.Logica.Unidad_1
             res.Mensaje = "Se encontró la raiz";
             res.Iteraciones = contador;
             res.Error = ErrorRelativo;
-
+        
+        
             //Preguntar que devolver en caso que se supere el numero de iteraciones y la raiz no sea correcta.
 
             //var expresion = new Expression(nombre, funcion, argumento1, argumento2);
 
             return res;
-
         }
 
         public double EvaluarExpresion(string nombre, Function funcion, Argument argumento)
         {
+
             var expresion = new Expression(nombre, funcion, argumento);
             var fX = expresion.calculate();
 
@@ -131,7 +179,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
 
         public double AveriguarXrBiseccion(double x1, double x2)
         {
-            var Xr = ((x1 * x2) / 2);
+            var Xr = ((x1 + x2) / 2);
 
             return Xr;
         }

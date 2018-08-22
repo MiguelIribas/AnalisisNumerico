@@ -13,9 +13,9 @@ namespace AnalisisNumerico.Logica.Tests
         {
             MetodosCerrados Biseccion = new MetodosCerrados();
             Resultado res = new Resultado();
-            res.Raiz = 3;
+            res.Raiz = -4;
 
-            Resultado ResultadoMetodoBiseccion = Biseccion.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=x-3", Iteraciones = 100, Tolerancia = 0.001, ValorInicial = 1, ValorFinal = 5 , TipoMetodoCerrado=TipoMetodoCerrado.Biseccion});
+            Resultado ResultadoMetodoBiseccion = Biseccion.MetodoRaiz(new ParametrosBiseccion { Funcion = "f(x)=((x^2)+4x)", Iteraciones = 100, Tolerancia = 0.001, ValorInicial = -5, ValorFinal = -1 , TipoMetodoCerrado=TipoMetodoCerrado.Biseccion});
 
             Assert.AreEqual(ResultadoMetodoBiseccion.Raiz, res.Raiz);
 
