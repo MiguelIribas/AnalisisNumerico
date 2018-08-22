@@ -25,7 +25,8 @@ namespace AnalisisNumerico.UI
             container = new Container();
 
             // Register your types, for instance:
-            container.Register<IMetodosRaices, Logica.Unidad_1.MetodosCerrados>();
+            container.Register<IMetodosCerrados, Logica.Unidad_1.MetodosCerrados>();
+            container.Register<IMetodosAbiertos, Logica.Unidad_1.MetodosAbiertos>();
             container.Register<InicioForm>();
             container.Register<FormularioMetodosCerrados>();
         }

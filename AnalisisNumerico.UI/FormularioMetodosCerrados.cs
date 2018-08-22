@@ -13,9 +13,9 @@ namespace AnalisisNumerico.UI
 {
     public partial class FormularioMetodosCerrados : Form
     {
-        private readonly IMetodosRaices metodosRaices;
+        private readonly IMetodosCerrados metodosRaices;
 
-        public FormularioMetodosCerrados(IMetodosRaices metodosRaices)
+        public FormularioMetodosCerrados(IMetodosCerrados metodosRaices)
         {
             InitializeComponent();
             this.metodosRaices = metodosRaices;
@@ -23,7 +23,7 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            ParametrosBiseccion parametros = new ParametrosBiseccion();
+            ParametrosMetodosCerrados parametros = new ParametrosMetodosCerrados();
 
             parametros.Funcion = txtboxFuncion.Text;
             parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);

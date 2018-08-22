@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Raices\IMetodosRaices.cs" />
-    <Compile Include="Raices\ParametrosBiseccion.cs" />
+    <Compile Include="Raices\IMetodosAbiertos.cs" />
+    <Compile Include="Raices\IMetodosCerrados.cs" />
+    <Compile Include="Raices\ParametrosMetodosAbiertos.cs" />
+    <Compile Include="Raices\ParametrosMetodosCerrados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raices\Resultado.cs" />
   </ItemGroup>

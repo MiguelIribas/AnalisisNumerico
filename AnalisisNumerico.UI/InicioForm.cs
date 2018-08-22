@@ -13,9 +13,9 @@ namespace AnalisisNumerico.UI
 {
     public partial class InicioForm : Form
     {
-        private readonly IMetodosRaices metodosRaices;
+        private readonly IMetodosCerrados metodosRaices;
 
-        public InicioForm(IMetodosRaices metodosRaices)
+        public InicioForm(IMetodosCerrados metodosRaices)
         {
             this.metodosRaices = metodosRaices;
 
