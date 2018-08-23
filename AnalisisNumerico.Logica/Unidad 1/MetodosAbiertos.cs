@@ -11,7 +11,11 @@ namespace AnalisisNumerico.Logica.Unidad_1
 {
     public class MetodosAbiertos: IMetodosAbiertos
     {
-
+        public Resultado MetodoTangente(ParametrosMetodosAbiertos parametros)
+        {
+            return this.MetodoRaiz(parametros);
+        }
+        
         public Resultado MetodoRaiz(ParametrosMetodosAbiertos parametros)
         {
             var funcion = new Function(parametros.Funcion);
@@ -19,6 +23,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var xii = new Argument("x", (parametros.ValorInicial + parametros.Tolerancia));
 
             double x1 = parametros.ValorInicial;
+            double x11 = (parametros.ValorInicial + parametros.Tolerancia);
            
             Resultado res = new Resultado();
             var nombre = parametros.Funcion.Split('=')[0].Trim();
@@ -44,13 +49,18 @@ namespace AnalisisNumerico.Logica.Unidad_1
             {
                 Xr = AveriguarXrTangente(x1,fxi,fxii);
             }
+            else
+            {
+                Xr = AveriguarXrSecante(fxi, fxii, x1, x11);
+            }
+            
             contador += 1;
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
 
-            if (fXr == 0)
+            if (Math.Round(fXr,2) == 0)
             {
-                res.Raiz = Xr;
+                res.Raiz = Math.Round(Xr,2);
                 res.Mensaje = "Se encontró la raiz";
                 res.Iteraciones = contador;
                 res.Error = ErrorRelativo;
@@ -66,7 +76,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 }
                 else
                 {
-                    //Xr = AveriguarXrReglaFalsa(x1, x2, fXd, fXi);
+                    Xr = AveriguarXrSecante(fxii, fxi, x1, x11);
                 }
                 contador += 1;
                 fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
@@ -92,9 +102,10 @@ namespace AnalisisNumerico.Logica.Unidad_1
             return fX;
         }
 
-        public Resultado MetodoTangente(ParametrosMetodosAbiertos parametros)
+        public double AveriguarXrSecante(double fxi, double fxii, double x1, double x11)
         {
-            throw new NotImplementedException();
+            var Xr = ((fxii*x1)-(fxi*x11))/(fxii-fxi);
+            return Xr;
         }
 
         public Resultado MetodoSecante(ParametrosMetodosAbiertos parametros)

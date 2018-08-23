@@ -78,7 +78,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
 
-            if (fXr==0)
+            if (fXr == 0)
             {
                 res.Raiz = Xr;
                 res.Mensaje = "Se encontró la raiz";
