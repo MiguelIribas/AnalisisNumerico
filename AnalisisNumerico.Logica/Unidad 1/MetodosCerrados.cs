@@ -44,14 +44,14 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 if (fXi == 0)
                 {
                     res.Raiz = x1;
-                    res.Mensaje = "Se encontró la raiz";
-                    res.Iteraciones = parametros.Iteraciones;
+                    res.Mensaje = "SE ENCONTRÓ LA RAIZ";
+                    res.Iteraciones = 0;
                 }
                 else
                 {
                     res.Raiz = x2;
-                    res.Mensaje = "Se encontró la raiz";
-                    res.Iteraciones = parametros.Iteraciones;
+                    res.Mensaje = "SE ENCONTRÓ LA RAIZ";
+                    res.Iteraciones = 0;
                 }
                 return res;
             }
@@ -59,7 +59,8 @@ namespace AnalisisNumerico.Logica.Unidad_1
             if ((fXi * fXd) >= 0)
             {
                 //throw new ArgumentException("Entre el valor inicial y final no existe la raiz");
-                res.Mensaje = "Entre el valor inicial y final no existe la raiz";
+                res.Mensaje = "ENTRE EL VALOR INICIAL Y FINAL NO EXISTE LA RAIZ";
+                res.Raiz = null;
                 return res;
             }
 
@@ -81,7 +82,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             if (fXr == 0)
             {
                 res.Raiz = Xr;
-                res.Mensaje = "Se encontró la raiz";
+                res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = contador;
                 res.Error = ErrorRelativo;
                 return res;
@@ -112,7 +113,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 ErrorRelativo = (Xr - Xant) / Xr;
             }
             res.Raiz = Math.Round(Xr,2);
-            res.Mensaje = "Se encontró la raiz";
+            res.Mensaje = "SE ENCONTRÓ LA RAIZ";
             res.Iteraciones = contador;
             res.Error = ErrorRelativo;
             return res;

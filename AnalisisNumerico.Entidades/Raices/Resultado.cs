@@ -2,7 +2,7 @@
 {
     public class Resultado
     {
-        public double Raiz { get; set; }
+        public double? Raiz { get; set; }
 
         public int Iteraciones { get; set; }
 

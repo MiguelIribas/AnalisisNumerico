@@ -28,8 +28,8 @@ namespace AnalisisNumerico.UI
             parametros.Funcion = txtboxFuncion.Text;
             parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
             parametros.Tolerancia = Convert.ToDouble(txtboxTolerancia.Text);
-            parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMinimo.Text);
-            parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text);
+            parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMaximo.Text);
+            parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMinimo.Text);
 
             Resultado resultado = new Resultado();
                
@@ -44,8 +44,34 @@ namespace AnalisisNumerico.UI
                 resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
             }
 
-            labelResultado.Text = resultado.Mensaje;
-            txtRaiz.Text = Convert.ToString(resultado.Raiz);
+            if (resultado.Raiz == null)
+            {
+                labelResultado.Text = resultado.Mensaje;
+                labelDetalles.Visible = false;
+                labelRaiz.Visible = false;
+                txtRaiz.Visible = false;
+                labelIteraciones.Visible = false;
+                labelIteracionesResultado.Visible = false;
+                labelError.Visible = false;
+                labelErrorResultado.Visible = false;
+            }
+            else
+            {
+                labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
+                labelDetalles.Visible = true;
+                labelRaiz.Visible = true;
+                txtRaiz.Visible = true;
+                labelIteraciones.Visible = true;
+                labelIteracionesResultado.Visible = true;
+                labelError.Visible = true;
+                labelErrorResultado.Visible = true;
+
+                labelResultado.Text = resultado.Mensaje;
+                labelErrorResultado.Text = Convert.ToString(resultado.Error);
+                labelIteracionesResultado.Text = Convert.ToString(resultado.Iteraciones);
+                txtRaiz.Text = Convert.ToString(resultado.Raiz);
+            }
         }
 
         private void MetodosCerrados_Load(object sender, EventArgs e)
@@ -55,6 +81,15 @@ namespace AnalisisNumerico.UI
             NombresMetodos.Add("REGLA FALSA");
 
             comboMetodo.DataSource = NombresMetodos;
+
+            labelResultado.Visible = false;
+            labelDetalles.Visible = false;
+            labelRaiz.Visible = false;
+            txtRaiz.Visible = false;
+            labelIteraciones.Visible = false;
+            labelIteracionesResultado.Visible = false;
+            labelError.Visible = false;
+            labelErrorResultado.Visible = false;
 
         }
 
