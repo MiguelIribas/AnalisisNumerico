@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnalisisNumerico.Entidades;
 using AnalisisNumerico.Logica.Unidad_1;
-using AnalisisNumerico.Entidades.Raices;
+
 
 namespace AnalisisNumerico.Logica.Tests
 {
@@ -16,7 +16,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = -4;
 
-            Resultado ResultadoMetodoBiseccion = Biseccion.MetodoRaiz(new ParametrosMetodosCerrados { Funcion = "f(x)=((x^2)+4*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = -5, ValorFinal = -1 , TipoMetodoCerrado=TipoMetodoCerrado.Biseccion});
+            Resultado ResultadoMetodoBiseccion = Biseccion.MetodoBiseccion(new ParametrosRaiz { Funcion = "f(x)=((x^2)+4*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = -5, ValorFinal = -1, TipoMetodo = TipoMetodo.Biseccion });
 
             Assert.AreEqual(ResultadoMetodoBiseccion.Raiz, res.Raiz);
 
@@ -29,7 +29,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 3;
 
-            Resultado ResultadoMetodoReglaFalsa = ReglaFalsa.MetodoRaiz(new ParametrosMetodosCerrados { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.001, ValorInicial = 2, ValorFinal = 4, TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa });
+            Resultado ResultadoMetodoReglaFalsa = ReglaFalsa.MetodoReglaFalsa(new ParametrosRaiz { Funcion = "f(x)=x-3", Iteraciones = 1000, Tolerancia = 0.001, ValorInicial = 2, ValorFinal = 4, TipoMetodo = TipoMetodo.ReglaFalsa });
             Assert.IsTrue(ResultadoMetodoReglaFalsa.Raiz > 2.999 && ResultadoMetodoReglaFalsa.Raiz < 3.001);
 
         }
@@ -41,7 +41,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 2;
 
-            Resultado ResultadoMetodoTangente = Tangente.MetodoRaiz(new ParametrosMetodosAbiertos { Funcion = "f(x)=((x^2)-(2*x))", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial =3, TipoMetodoAbierto = TipoMetodoAbierto.Tangente });
+            Resultado ResultadoMetodoTangente = Tangente.MetodoRaiz(new ParametrosRaiz { Funcion = "f(x)=((x^2)-(2*x))", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, TipoMetodo = TipoMetodo.Tangente });
 
             Assert.AreEqual(ResultadoMetodoTangente.Raiz, res.Raiz);
 
@@ -54,9 +54,9 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 2;
 
-            Resultado ResultadoMetodoTangente = Secante.MetodoRaiz(new ParametrosMetodosAbiertos { Funcion = "f(x)=((x^2)-(2*x))", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, TipoMetodoAbierto = TipoMetodoAbierto.Secante });
+            Resultado ResultadoMetodoSecante = Secante.MetodoRaiz(new ParametrosRaiz { Funcion = "f(x)=((x^2)-2*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, ValorFinal = 5, TipoMetodo = TipoMetodo.Secante });
 
-            Assert.AreEqual(ResultadoMetodoTangente.Raiz, res.Raiz);
+            Assert.AreEqual(ResultadoMetodoSecante.Raiz, res.Raiz);
 
         }
 

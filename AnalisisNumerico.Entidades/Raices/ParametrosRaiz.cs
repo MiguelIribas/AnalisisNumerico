@@ -1,6 +1,6 @@
 ﻿namespace AnalisisNumerico.Entidades
 {
-    public class ParametrosMetodosCerrados
+    public class ParametrosRaiz
     {
         public string Funcion { get; set; }
 
@@ -12,11 +12,11 @@
 
         public double Tolerancia { get; set; }
 
-        public TipoMetodoCerrado TipoMetodoCerrado { get; set; }
+        public TipoMetodo TipoMetodo { get; set; }
     }
 }
 
-public enum TipoMetodoCerrado
+public enum TipoMetodo
 {
-    Biseccion, ReglaFalsa
+    Biseccion, ReglaFalsa, Tangente, Secante
 }

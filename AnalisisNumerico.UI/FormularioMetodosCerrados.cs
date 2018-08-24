@@ -23,7 +23,7 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            ParametrosMetodosCerrados parametros = new ParametrosMetodosCerrados();
+            ParametrosRaiz parametros = new ParametrosRaiz();
 
             parametros.Funcion = txtboxFuncion.Text;
             parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
@@ -35,12 +35,12 @@ namespace AnalisisNumerico.UI
                
             if (comboMetodo.Text=="BISECCION")
             {
-                parametros.TipoMetodoCerrado = TipoMetodoCerrado.Biseccion;
+                parametros.TipoMetodo = TipoMetodo.Biseccion;
                 resultado=this.metodosRaices.MetodoBiseccion(parametros);
             }
             else
             {
-                parametros.TipoMetodoCerrado = TipoMetodoCerrado.ReglaFalsa;
+                parametros.TipoMetodo = TipoMetodo.ReglaFalsa;
                 resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
             }
 

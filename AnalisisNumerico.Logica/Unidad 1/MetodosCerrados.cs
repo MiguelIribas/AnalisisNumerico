@@ -2,11 +2,6 @@
 using AnalisisNumerico.Entidades;
 using org.mariuszgromada.math.mxparser;
 
-
-//public delegate void DelegadoRaiz();
-
-
-//DELEGADO
 //HACER EL FORMULARIO (PASAR BIEN LOS DATOS)
 //OPTIMIZAR EL CODIGO
 //VALIDACIONES (X==0) Y CUANDO LA FUNCION TIENE 2 RAICES
@@ -15,17 +10,19 @@ namespace AnalisisNumerico.Logica.Unidad_1
 {
     public class MetodosCerrados : IMetodosCerrados
     {
-        public Resultado MetodoBiseccion(ParametrosMetodosCerrados parametros)
+        private delegate double MetodoCerradoDelegate(double x1, double x2, double Fxd, double Fxi);
+
+        public Resultado MetodoBiseccion(ParametrosRaiz parametros)
         {
-            return this.MetodoRaiz(parametros);
+            return this.MetodoRaiz(parametros, AveriguarXrBiseccion);
         }
 
-        public Resultado MetodoReglaFalsa(ParametrosMetodosCerrados parametros)
+        public Resultado MetodoReglaFalsa(ParametrosRaiz parametros)
         {
-            return this.MetodoRaiz(parametros);
+            return this.MetodoRaiz(parametros, AveriguarXrReglaFalsa);
         }
 
-        public Resultado MetodoRaiz(ParametrosMetodosCerrados parametros)
+        private Resultado MetodoRaiz(ParametrosRaiz parametros, MetodoCerradoDelegate averiguarXr)
         {
             var funcion = new Function(parametros.Funcion);
             var Xi = new Argument("x", parametros.ValorInicial);
@@ -67,14 +64,8 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var contador = 0;
             double Xant = 0;
 
-            if (parametros.TipoMetodoCerrado == TipoMetodoCerrado.Biseccion)
-            {
-                Xr = AveriguarXrBiseccion(x1, x2);
-            }
-            else
-            {
-                Xr = AveriguarXrReglaFalsa(x1, x2, fXd, fXi);
-            }
+            Xr = averiguarXr(x1, x2, fXd, fXi);
+
             contador += 1;
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
@@ -87,8 +78,8 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 res.Error = ErrorRelativo;
                 return res;
             }
-                             
-            while ((Math.Abs(fXr) >= parametros.Tolerancia || ((ErrorRelativo >= parametros.Tolerancia) && (Xr!=0)) || (contador < parametros.Iteraciones)))
+
+            while ((Math.Abs(fXr) >= parametros.Tolerancia || ((ErrorRelativo >= parametros.Tolerancia) && (Xr != 0)) || (contador < parametros.Iteraciones)))
             {
                 if ((fXi * fXr) > 0)
                 {
@@ -100,19 +91,13 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 }
                 Xant = Xr;
 
-                if (parametros.TipoMetodoCerrado == TipoMetodoCerrado.Biseccion)
-                {
-                    Xr = AveriguarXrBiseccion(x1, x2);
-                }
-                else
-                {
-                    Xr = AveriguarXrReglaFalsa(x1, x2, fXd, fXi);
-                }
+                Xr = averiguarXr(x1, x2, fXd, fXi);
+
                 contador += 1;
                 fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
                 ErrorRelativo = (Xr - Xant) / Xr;
             }
-            res.Raiz = Math.Round(Xr,2);
+            res.Raiz = Math.Round(Xr, 2);
             res.Mensaje = "SE ENCONTRÓ LA RAIZ";
             res.Iteraciones = contador;
             res.Error = ErrorRelativo;
@@ -126,7 +111,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             return fX;
         }
 
-        public double AveriguarXrBiseccion(double x1, double x2)
+        public double AveriguarXrBiseccion(double x1, double x2, double Fxd, double Fxi)
         {
             var Xr = ((x1 + x2) / 2);
             return Xr;
