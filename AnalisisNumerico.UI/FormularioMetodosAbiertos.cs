@@ -11,21 +11,39 @@ using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class FormularioMetodosCerrados : Form
+    public partial class FormularioMetodosAbiertos : Form
     {
-        private readonly IMetodosCerrados metodosRaices;
+        private readonly IMetodosAbiertos metodosRaices;
 
-        public FormularioMetodosCerrados(IMetodosCerrados metodosRaices)
+        public FormularioMetodosAbiertos(IMetodosAbiertos metodosRaices)
         {
             InitializeComponent();
             this.metodosRaices = metodosRaices;
+        }
+
+        private void FormularioMetodosAbiertos_Load(object sender, EventArgs e)
+        {
+            List<string> NombresMetodos = new List<string>();
+            NombresMetodos.Add("NEWTON-RAPHSON (TANGENTE)");
+            NombresMetodos.Add("SECANTE");
+
+            comboMetodo.DataSource = NombresMetodos;
+
+            labelResultado.Visible = false;
+            labelDetalles.Visible = false;
+            labelRaiz.Visible = false;
+            txtRaiz.Visible = false;
+            labelIteraciones.Visible = false;
+            labelIteracionesResultado.Visible = false;
+            labelError.Visible = false;
+            labelErrorResultado.Visible = false;
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             ParametrosRaiz parametros = new ParametrosRaiz();
 
-            if (txtboxFuncion.Text!="" && txtboxIteraciones.Text!="" && txtboxLimiteMaximo.Text!="" && txtboxLimiteMinimo.Text!="" && txtboxTolerancia.Text!="" )
+            if (txtboxFuncion.Text != "" && txtboxIteraciones.Text != "" && txtboxLimiteMaximo.Text != "" && txtboxLimiteMinimo.Text != "" && txtboxTolerancia.Text != "")
             {
                 parametros.Funcion = txtboxFuncion.Text;
                 parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
@@ -40,16 +58,16 @@ namespace AnalisisNumerico.UI
             }
 
             Resultado resultado = new Resultado();
-               
-            if (comboMetodo.Text=="BISECCION")
+
+            if (comboMetodo.Text == "SECANTE")
             {
-                parametros.TipoMetodo = TipoMetodo.Biseccion;
-                resultado=this.metodosRaices.MetodoBiseccion(parametros);
+                parametros.TipoMetodo = TipoMetodo.Secante;
+                resultado = this.metodosRaices.MetodoSecante(parametros);
             }
             else
             {
-                parametros.TipoMetodo = TipoMetodo.ReglaFalsa;
-                resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
+                parametros.TipoMetodo = TipoMetodo.Tangente;
+                resultado = this.metodosRaices.MetodoTangente(parametros);
             }
 
             if (resultado.Raiz == null)
@@ -82,35 +100,21 @@ namespace AnalisisNumerico.UI
             }
         }
 
-        private void FormularioMetodosCerrados_Load(object sender, EventArgs e)
-        {
-            List<string> NombresMetodos = new List<string>();
-            NombresMetodos.Add("BISECCION");
-            NombresMetodos.Add("REGLA FALSA");
-
-            comboMetodo.DataSource = NombresMetodos;
-
-            labelResultado.Visible = false;
-            labelDetalles.Visible = false;
-            labelRaiz.Visible = false;
-            txtRaiz.Visible = false;
-            labelIteraciones.Visible = false;
-            labelIteracionesResultado.Visible = false;
-            labelError.Visible = false;
-            labelErrorResultado.Visible = false;
-        }
-
         private void comboMetodo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboMetodo.Text=="BISECCION")
+            if (comboMetodo.Text == "SECANTE")
             {
-                labelBiseccion.Visible = true;
-                labelReglaFalsa.Visible = false;  
+                labelSecante.Visible = true;
+                labelTangente.Visible = false;
+                labelLimiteMaximo.Visible = true;
+                txtboxLimiteMaximo.Visible = true;
             }
             else
             {
-                labelBiseccion.Visible = false;
-                labelReglaFalsa.Visible = true;
+                labelSecante.Visible = false;
+                labelTangente.Visible = true;
+                labelLimiteMaximo.Visible = false;
+                txtboxLimiteMaximo.Visible = false;
             }
         }
     }

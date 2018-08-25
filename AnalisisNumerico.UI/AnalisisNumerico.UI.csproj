@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioMetodosAbiertos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMetodosAbiertos.Designer.cs">
+      <DependentUpon>FormularioMetodosAbiertos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioMetodosCerrados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormularioMetodosAbiertos.resx">
+      <DependentUpon>FormularioMetodosAbiertos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioMetodosCerrados.resx">
       <DependentUpon>FormularioMetodosCerrados.cs</DependentUpon>
     </EmbeddedResource>

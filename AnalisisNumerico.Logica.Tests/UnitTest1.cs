@@ -41,7 +41,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 2;
 
-            Resultado ResultadoMetodoTangente = Tangente.MetodoRaiz(new ParametrosRaiz { Funcion = "f(x)=((x^2)-(2*x))", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, TipoMetodo = TipoMetodo.Tangente });
+            Resultado ResultadoMetodoTangente = Tangente.MetodoTangente(new ParametrosRaiz { Funcion = "f(x)=((x^2)-(2*x))", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, TipoMetodo = TipoMetodo.Tangente });
 
             Assert.AreEqual(ResultadoMetodoTangente.Raiz, res.Raiz);
 
@@ -54,7 +54,7 @@ namespace AnalisisNumerico.Logica.Tests
             Resultado res = new Resultado();
             res.Raiz = 2;
 
-            Resultado ResultadoMetodoSecante = Secante.MetodoRaiz(new ParametrosRaiz { Funcion = "f(x)=((x^2)-2*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, ValorFinal = 5, TipoMetodo = TipoMetodo.Secante });
+            Resultado ResultadoMetodoSecante = Secante.MetodoSecante(new ParametrosRaiz { Funcion = "f(x)=((x^2)-2*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 3, ValorFinal = 5, TipoMetodo = TipoMetodo.Secante });
 
             Assert.AreEqual(ResultadoMetodoSecante.Raiz, res.Raiz);
 

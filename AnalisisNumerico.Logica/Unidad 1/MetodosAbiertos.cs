@@ -14,8 +14,13 @@ namespace AnalisisNumerico.Logica.Unidad_1
         {
             return this.MetodoRaiz(parametros);
         }
-        
-        public Resultado MetodoRaiz(ParametrosRaiz parametros)
+
+        public Resultado MetodoSecante(ParametrosRaiz parametros)
+        {
+            return this.MetodoRaiz(parametros);
+        }
+
+        private Resultado MetodoRaiz(ParametrosRaiz parametros)
         {
             var funcion = new Function(parametros.Funcion);
 
@@ -143,9 +148,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             return Xr;
         }
 
-        public Resultado MetodoSecante(ParametrosRaiz parametros)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

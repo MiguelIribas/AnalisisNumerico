@@ -32,8 +32,6 @@
             this.uNIDADIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mETODOSCERRADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mETODOSABIERTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nEWTONRAPHSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sECANTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sISTEMADEECUACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gAUSSJORDANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gAUSSSEDELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,24 +76,10 @@
             // 
             // mETODOSABIERTOSToolStripMenuItem
             // 
-            this.mETODOSABIERTOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nEWTONRAPHSONToolStripMenuItem,
-            this.sECANTEToolStripMenuItem});
             this.mETODOSABIERTOSToolStripMenuItem.Name = "mETODOSABIERTOSToolStripMenuItem";
             this.mETODOSABIERTOSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.mETODOSABIERTOSToolStripMenuItem.Text = "METODOS ABIERTOS";
-            // 
-            // nEWTONRAPHSONToolStripMenuItem
-            // 
-            this.nEWTONRAPHSONToolStripMenuItem.Name = "nEWTONRAPHSONToolStripMenuItem";
-            this.nEWTONRAPHSONToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nEWTONRAPHSONToolStripMenuItem.Text = "NEWTON-RAPHSON";
-            // 
-            // sECANTEToolStripMenuItem
-            // 
-            this.sECANTEToolStripMenuItem.Name = "sECANTEToolStripMenuItem";
-            this.sECANTEToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.sECANTEToolStripMenuItem.Text = "SECANTE";
+            this.mETODOSABIERTOSToolStripMenuItem.Click += new System.EventHandler(this.mETODOSABIERTOSToolStripMenuItem_Click);
             // 
             // sISTEMADEECUACIONESToolStripMenuItem
             // 
@@ -190,8 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem uNIDADIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSCERRADOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSABIERTOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nEWTONRAPHSONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sECANTEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sISTEMADEECUACIONESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gAUSSJORDANToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gAUSSSEDELToolStripMenuItem;

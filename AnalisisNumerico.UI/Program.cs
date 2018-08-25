@@ -29,6 +29,7 @@ namespace AnalisisNumerico.UI
             container.Register<IMetodosAbiertos, Logica.Unidad_1.MetodosAbiertos>();
             container.Register<InicioForm>();
             container.Register<FormularioMetodosCerrados>();
+            container.Register<FormularioMetodosAbiertos>();
         }
     }
 }

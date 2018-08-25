@@ -311,9 +311,10 @@
             this.Controls.Add(this.txtboxTolerancia);
             this.Controls.Add(this.Funcion);
             this.Controls.Add(this.txtboxFuncion);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Name = "FormularioMetodosCerrados";
             this.Text = "METODOS CERRADOS";
-            this.Load += new System.EventHandler(this.MetodosCerrados_Load);
+            this.Load += new System.EventHandler(this.FormularioMetodosCerrados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

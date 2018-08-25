@@ -29,9 +29,16 @@ namespace AnalisisNumerico.UI
 
         private void MetodosCerradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormularioMetodosCerrados FormularioBiseccion = Program.container.GetInstance<FormularioMetodosCerrados>();
-            FormularioBiseccion.Owner = this;
-            FormularioBiseccion.ShowDialog();
+            FormularioMetodosCerrados FormularioMetodosCerrados = Program.container.GetInstance<FormularioMetodosCerrados>();
+            FormularioMetodosCerrados.Owner = this;
+            FormularioMetodosCerrados.ShowDialog();
+        }
+
+        private void mETODOSABIERTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioMetodosAbiertos FormularioMetodosAbiertos = Program.container.GetInstance<FormularioMetodosAbiertos>();
+            FormularioMetodosAbiertos.Owner = this;
+            FormularioMetodosAbiertos.ShowDialog();
         }
     }
 }
