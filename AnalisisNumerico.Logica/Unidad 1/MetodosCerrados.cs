@@ -2,9 +2,6 @@
 using AnalisisNumerico.Entidades;
 using org.mariuszgromada.math.mxparser;
 
-//HACER EL FORMULARIO (PASAR BIEN LOS DATOS)
-//OPTIMIZAR EL CODIGO
-//VALIDACIONES (X==0) Y CUANDO LA FUNCION TIENE 2 RAICES
 
 namespace AnalisisNumerico.Logica.Unidad_1
 {
@@ -34,6 +31,14 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var nombre = parametros.Funcion.Split('=')[0].Trim();
             var fXi = EvaluarExpresion(nombre, funcion, Xi);
             var fXd = EvaluarExpresion(nombre, funcion, Xd);
+
+            if (double.IsNaN(fXi)|| double.IsNaN(fXd))
+            {
+                res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                res.Raiz = null;
+                return res;
+            }
+
             double Xr = 0;
 
             if (fXi * fXd == 0)
@@ -65,14 +70,13 @@ namespace AnalisisNumerico.Logica.Unidad_1
             double Xant = 0;
 
             Xr = averiguarXr(x1, x2, fXd, fXi);
-
             contador += 1;
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
 
             if (fXr == 0)
             {
-                res.Raiz = Xr;
+                res.Raiz = Math.Round(Xr, 6);
                 res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = contador;
                 res.Error = ErrorRelativo;
@@ -92,12 +96,11 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 Xant = Xr;
 
                 Xr = averiguarXr(x1, x2, fXd, fXi);
-
                 contador += 1;
                 fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
                 ErrorRelativo = (Xr - Xant) / Xr;
             }
-            res.Raiz = Math.Round(Xr, 2);
+            res.Raiz = Math.Round(Xr, 6);
             res.Mensaje = "SE ENCONTRÓ LA RAIZ";
             res.Iteraciones = contador;
             res.Error = ErrorRelativo;
@@ -110,7 +113,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var fX = expresion.calculate();
             return fX;
         }
-
+               
         public double AveriguarXrBiseccion(double x1, double x2, double Fxd, double Fxi)
         {
             var Xr = ((x1 + x2) / 2);

@@ -56,3 +56,4 @@ D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Formulari
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.InicioForm.resources
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csproj.GenerateResource.Cache
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMetodosAbiertos.resources
+D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMetodosAbiertos.resources

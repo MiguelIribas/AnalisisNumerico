@@ -13,3 +13,8 @@ E:\Analisis numerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entid
 E:\Analisis numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojResolveAssemblyReference.cache
 E:\Analisis numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
 E:\Analisis numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb
+D:\Analisis Numerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.dll
+D:\Analisis Numerico\AnalisisNumerico.Entidades\bin\Debug\AnalisisNumerico.Entidades.pdb
+D:\Analisis Numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.csprojResolveAssemblyReference.cache
+D:\Analisis Numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.dll
+D:\Analisis Numerico\AnalisisNumerico.Entidades\obj\Debug\AnalisisNumerico.Entidades.pdb

@@ -10,17 +10,19 @@ namespace AnalisisNumerico.Logica.Unidad_1
 {
     public class MetodosAbiertos: IMetodosAbiertos
     {
+        private delegate double MetodoAbiertoDelegate(double fxi, double fxd, double dfx, double x1, double x2);
+
         public Resultado MetodoTangente(ParametrosRaiz parametros)
         {
-            return this.MetodoRaiz(parametros);
+            return this.MetodoRaiz(parametros, AveriguarXrTangente); 
         }
 
         public Resultado MetodoSecante(ParametrosRaiz parametros)
         {
-            return this.MetodoRaiz(parametros);
+            return this.MetodoRaiz(parametros, AveriguarXrSecante);
         }
 
-        private Resultado MetodoRaiz(ParametrosRaiz parametros)
+        private Resultado MetodoRaiz(ParametrosRaiz parametros, MetodoAbiertoDelegate averiguarXr)
         {
             var funcion = new Function(parametros.Funcion);
 
@@ -32,6 +34,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             double fxd = 0;
             double x11=0;
             double x2=0;
+            double dfx = 0;
             Resultado res = new Resultado();
 
             if (parametros.TipoMetodo==TipoMetodo.Tangente)
@@ -48,6 +51,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     res.Iteraciones = parametros.Iteraciones;
                     return res;
                 }
+                dfx = ((fxii - fxi) / parametros.Tolerancia);
             }
             else
             {
@@ -72,31 +76,26 @@ namespace AnalisisNumerico.Logica.Unidad_1
                         return res;
                     }                    
                 }
-            }                
-
+            }               
             var contador = 0;
             double Xant = 0;
-            double Xr = 0;
-           
-            //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ           
-            var dfx = ((fxii - fxi) / parametros.Tolerancia);            
-
+            double Xr = 0;           
+            //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ    
             if (parametros.TipoMetodo == TipoMetodo.Tangente)
             {
-                Xr = AveriguarXrTangente(x1,fxi,fxii);
+                Xr = AveriguarXrTangente(fxi,fxd,dfx,x1,x2); 
             }
             else
             {
-                Xr = AveriguarXrSecante(fxi, fxd, x1, x2);
-            }
-            
+                Xr = AveriguarXrSecante(fxi, fxd, dfx, x1, x2);
+            }            
             contador += 1;
             var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             var ErrorRelativo = (Xr - Xant) / Xr;
 
             if (Math.Round(fXr,2) == 0)
             {
-                res.Raiz = Math.Round(Xr,2);
+                res.Raiz = Math.Round(Xr, 6);
                 res.Mensaje = "Se encontró la raiz";
                 res.Iteraciones = contador;
                 res.Error = ErrorRelativo;
@@ -108,7 +107,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 Xant = Xr;
                 if (parametros.TipoMetodo == TipoMetodo.Tangente)
                 {
-                    Xr = AveriguarXrTangente(x1, fxi, fxii);
+                    Xr = AveriguarXrTangente(fxi, fxd, dfx, x1, x2);
                 }
                 else
                 {
@@ -116,24 +115,20 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     x1 = Xr;
                     fxi = EvaluarExpresion(nombre, funcion, new Argument("x", x1));
                     fxd = EvaluarExpresion(nombre, funcion, new Argument("x", x2));
-                    Xr = AveriguarXrSecante( fxi,  fxd,  x1,  x2);
+                    Xr = AveriguarXrSecante(fxi, fxd, dfx, x1, x2);
                 }
                 contador += 1;
                 fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
                 ErrorRelativo = (Xr - Xant) / Xr;
             }
-            res.Raiz = Math.Round(Xr, 2);
+            res.Raiz = Math.Round(Xr, 6);
             res.Mensaje = "Se encontró la raiz";
             res.Iteraciones = contador;
             res.Error = ErrorRelativo;
             return res;
         }
 
-        public double AveriguarXrTangente(double xi, double fxi, double dfx)
-        {
-            var Xr = (xi - (fxi / dfx));
-            return Xr;
-        }
+       
 
         public double EvaluarExpresion(string nombre, Function funcion, Argument argumento)
         {
@@ -142,12 +137,16 @@ namespace AnalisisNumerico.Logica.Unidad_1
             return fX;
         }
 
-        public double AveriguarXrSecante(double fxi, double fxd, double x1, double x2)
+        public double AveriguarXrTangente (double fxi, double fxd, double dfx, double x1, double x2) //(double xi, double fxi, double dfx)
         {
-            var Xr = ((fxd * x1)-(fxi*x2))/(fxd-fxi);
+            var Xr = (x1 - (fxi / dfx));
             return Xr;
         }
 
-        
+        public double AveriguarXrSecante(double fxi, double fxd, double dfx, double x1, double x2)
+        {
+            var Xr = ((fxd * x1)-(fxi*x2))/(fxd-fxi);
+            return Xr;
+        }        
     }
 }
