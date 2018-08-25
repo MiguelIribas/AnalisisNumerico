@@ -14,13 +14,24 @@ namespace AnalisisNumerico.Logica.Tests
         {
             MetodosCerrados Biseccion = new MetodosCerrados();
             Resultado res = new Resultado();
+
             res.Raiz = -4;
-
             Resultado ResultadoMetodoBiseccion = Biseccion.MetodoBiseccion(new ParametrosRaiz { Funcion = "f(x)=((x^2)+4*x)", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = -5, ValorFinal = -1, TipoMetodo = TipoMetodo.Biseccion });
-
             Assert.AreEqual(ResultadoMetodoBiseccion.Raiz, res.Raiz);
-
         }
+
+        [TestMethod]
+        public void Biseccion2()
+        {
+            MetodosCerrados Biseccion = new MetodosCerrados();
+            Resultado res = new Resultado();
+
+            res.Raiz = 1.249877;
+            Resultado ResultadoMetodoBiseccion2 = Biseccion.MetodoBiseccion(new ParametrosRaiz { Funcion = "f(x)=(x^5-1)*Exp(1)^x-10", Iteraciones = 100, Tolerancia = 0.0001, ValorInicial = 1, ValorFinal = 1.5, TipoMetodo = TipoMetodo.Biseccion });
+            Assert.AreEqual(ResultadoMetodoBiseccion2.Raiz, res.Raiz);
+        }
+
+        
 
         [TestMethod]
         public void ReglaFalsa()
