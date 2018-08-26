@@ -43,13 +43,16 @@ namespace AnalisisNumerico.UI
         {
             ParametrosRaiz parametros = new ParametrosRaiz();
 
-            if (txtboxFuncion.Text != "" && txtboxIteraciones.Text != "" && txtboxLimiteMaximo.Text != "" && txtboxLimiteMinimo.Text != "" && txtboxTolerancia.Text != "")
+            if (txtboxFuncion.Text != "" && txtboxIteraciones.Text != "" && txtboxLimiteMinimo.Text != "" && txtboxTolerancia.Text != "")
             {
+                if (comboMetodo.Text=="SECANTE" && txtboxLimiteMaximo.Text != "")
+                {
+                    parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text);
+                }
                 parametros.Funcion = txtboxFuncion.Text;
                 parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
                 parametros.Tolerancia = Convert.ToDouble(txtboxTolerancia.Text);
-                parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMaximo.Text);
-                parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMinimo.Text);
+                parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMinimo.Text);
             }
             else
             {

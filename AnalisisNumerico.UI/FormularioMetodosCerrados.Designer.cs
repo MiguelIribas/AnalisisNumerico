@@ -51,6 +51,7 @@
             this.labelError = new System.Windows.Forms.Label();
             this.labelIteracionesResultado = new System.Windows.Forms.Label();
             this.labelErrorResultado = new System.Windows.Forms.Label();
+            this.btnLimpiarPantalla = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtboxFuncion
@@ -283,11 +284,23 @@
             this.labelErrorResultado.TabIndex = 23;
             this.labelErrorResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLimpiarPantalla
+            // 
+            this.btnLimpiarPantalla.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarPantalla.Location = new System.Drawing.Point(573, 2);
+            this.btnLimpiarPantalla.Name = "btnLimpiarPantalla";
+            this.btnLimpiarPantalla.Size = new System.Drawing.Size(208, 32);
+            this.btnLimpiarPantalla.TabIndex = 24;
+            this.btnLimpiarPantalla.Text = "LIMPIAR PANTALLA";
+            this.btnLimpiarPantalla.UseVisualStyleBackColor = true;
+            this.btnLimpiarPantalla.Click += new System.EventHandler(this.btnLimpiarPantalla_Click);
+            // 
             // FormularioMetodosCerrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.btnLimpiarPantalla);
             this.Controls.Add(this.labelErrorResultado);
             this.Controls.Add(this.labelIteracionesResultado);
             this.Controls.Add(this.labelError);
@@ -345,5 +358,6 @@
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelIteracionesResultado;
         private System.Windows.Forms.Label labelErrorResultado;
+        private System.Windows.Forms.Button btnLimpiarPantalla;
     }
 }

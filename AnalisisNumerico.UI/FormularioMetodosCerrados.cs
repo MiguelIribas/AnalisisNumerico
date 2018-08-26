@@ -30,8 +30,8 @@ namespace AnalisisNumerico.UI
                 parametros.Funcion = txtboxFuncion.Text;
                 parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
                 parametros.Tolerancia = Convert.ToDouble(txtboxTolerancia.Text);
-                parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMaximo.Text);
-                parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMinimo.Text);
+                parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMinimo.Text);
+                parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text); 
             }
             else
             {
@@ -54,7 +54,9 @@ namespace AnalisisNumerico.UI
 
             if (resultado.Raiz == null)
             {
+
                 labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
                 labelDetalles.Visible = false;
                 labelRaiz.Visible = false;
                 txtRaiz.Visible = false;
@@ -112,6 +114,25 @@ namespace AnalisisNumerico.UI
                 labelBiseccion.Visible = false;
                 labelReglaFalsa.Visible = true;
             }
+        }
+
+        private void btnLimpiarPantalla_Click(object sender, EventArgs e)
+        {
+            labelResultado.Visible = false;
+            labelDetalles.Visible = false;
+            labelRaiz.Visible = false;
+            txtRaiz.Visible = false;
+            labelIteraciones.Visible = false;
+            labelIteracionesResultado.Visible = false;
+            labelError.Visible = false;
+            labelErrorResultado.Visible = false;
+
+            txtboxFuncion.Text = "";
+            txtboxIteraciones.Text = "";
+            txtboxLimiteMaximo.Text = "";
+            txtboxLimiteMinimo.Text = "";
+            txtboxTolerancia.Text = "";
+
         }
     }
 }
