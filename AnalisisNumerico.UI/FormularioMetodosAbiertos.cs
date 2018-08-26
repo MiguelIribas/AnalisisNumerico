@@ -45,7 +45,7 @@ namespace AnalisisNumerico.UI
 
             if (txtboxFuncion.Text != "" && txtboxIteraciones.Text != "" && txtboxLimiteMinimo.Text != "" && txtboxTolerancia.Text != "")
             {
-                if (comboMetodo.Text=="SECANTE" && txtboxLimiteMaximo.Text != "")
+                if (comboMetodo.Text == "SECANTE" && txtboxLimiteMaximo.Text != "")
                 {
                     parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text);
                 }
@@ -73,19 +73,9 @@ namespace AnalisisNumerico.UI
                 resultado = this.metodosRaices.MetodoTangente(parametros);
             }
 
-            if (resultado.Raiz == null)
+            if (resultado.TipoResultado == TipoResultado.Raiz)
             {
-                labelResultado.Text = resultado.Mensaje;
-                labelDetalles.Visible = false;
-                labelRaiz.Visible = false;
-                txtRaiz.Visible = false;
-                labelIteraciones.Visible = false;
-                labelIteracionesResultado.Visible = false;
-                labelError.Visible = false;
-                labelErrorResultado.Visible = false;
-            }
-            else
-            {
+                labelResultado.Height = 40;
                 labelResultado.Text = resultado.Mensaje;
                 labelResultado.Visible = true;
                 labelDetalles.Visible = true;
@@ -100,6 +90,34 @@ namespace AnalisisNumerico.UI
                 labelErrorResultado.Text = Convert.ToString(resultado.Error);
                 labelIteracionesResultado.Text = Convert.ToString(resultado.Iteraciones);
                 txtRaiz.Text = Convert.ToString(resultado.Raiz);
+            }
+
+            if (resultado.TipoResultado == TipoResultado.FueradeLimites || resultado.TipoResultado == TipoResultado.FuncionIncorrecta)
+            {
+                labelResultado.Height = 40;
+                labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
+                labelDetalles.Visible = false;
+                labelRaiz.Visible = false;
+                txtRaiz.Visible = false;
+                labelIteraciones.Visible = false;
+                labelIteracionesResultado.Visible = false;
+                labelError.Visible = false;
+                labelErrorResultado.Visible = false;
+            }
+
+            if (resultado.TipoResultado==TipoResultado.Constante)
+            {
+                labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
+                labelResultado.Height = 80;
+                labelDetalles.Visible = false;
+                labelRaiz.Visible = false;
+                txtRaiz.Visible = false;
+                labelIteraciones.Visible = false;
+                labelIteracionesResultado.Visible = false;
+                labelError.Visible = false;
+                labelErrorResultado.Visible = false;
             }
         }
 
@@ -119,6 +137,24 @@ namespace AnalisisNumerico.UI
                 labelLimiteMaximo.Visible = false;
                 txtboxLimiteMaximo.Visible = false;
             }
+        }
+
+        private void btnLimpiarPantalla_Click(object sender, EventArgs e)
+        {
+            labelResultado.Visible = false;
+            labelDetalles.Visible = false;
+            labelRaiz.Visible = false;
+            txtRaiz.Visible = false;
+            labelIteraciones.Visible = false;
+            labelIteracionesResultado.Visible = false;
+            labelError.Visible = false;
+            labelErrorResultado.Visible = false;
+
+            txtboxFuncion.Text = "";
+            txtboxIteraciones.Text = "";
+            txtboxLimiteMaximo.Text = "";
+            txtboxLimiteMinimo.Text = "";
+            txtboxTolerancia.Text = "";
         }
     }
 }

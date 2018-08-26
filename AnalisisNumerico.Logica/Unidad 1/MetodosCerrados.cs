@@ -57,6 +57,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             {
                 res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
                 res.Raiz = null;
+                res.TipoResultado = TipoResultado.FuncionIncorrecta;
                 return res;
             }
           
@@ -65,7 +66,8 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = 1;
                 res.Raiz = x1;
-                //devolver error relativo
+                res.Error = ErrorRelativo;
+                res.TipoResultado = TipoResultado.Raiz;
 
                 if (fXd == 0)
                 {
@@ -79,6 +81,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             {
                 res.Mensaje = "ENTRE EL VALOR INICIAL Y FINAL NO EXISTE LA RAIZ";
                 res.Raiz = null;
+                res.TipoResultado = TipoResultado.FueradeLimites;
                 return res;
             }
 
@@ -89,6 +92,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 res.Raiz = Math.Round(Xr, 6);
                 res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = contador;
+                res.TipoResultado = TipoResultado.Raiz;
                 res.Error = ErrorRelativo;
                 return res;
             }
@@ -110,6 +114,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             res.Raiz = Math.Round(Xr, 6);
             res.Mensaje = "SE ENCONTRÓ LA RAIZ";
             res.Iteraciones = contador;
+            res.TipoResultado = TipoResultado.Raiz;
             res.Error = ErrorRelativo;
             return res;
         }

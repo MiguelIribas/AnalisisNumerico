@@ -8,13 +8,28 @@ using org.mariuszgromada.math.mxparser;
 
 namespace AnalisisNumerico.Logica.Unidad_1
 {
-    public class MetodosAbiertos: IMetodosAbiertos
+    public class MetodosAbiertos : IMetodosAbiertos
     {
+        public double Xr { get; set; }
+        public int contador { get; set; }
+        public double Xant { get; set; }
+        public double fXr { get; set; }
+        public double ErrorRelativo { get; set; }
+
+        public MetodosAbiertos()
+        {
+            this.Xr = 0;
+            this.contador = 0;
+            this.Xant = 0;
+            this.fXr = 0;
+            this.ErrorRelativo = 0;
+        }
+
         private delegate double MetodoAbiertoDelegate(double fxi, double fxd, double dfx, double x1, double x2);
 
         public Resultado MetodoTangente(ParametrosRaiz parametros)
         {
-            return this.MetodoRaiz(parametros, AveriguarXrTangente); 
+            return this.MetodoRaiz(parametros, AveriguarXrTangente);
         }
 
         public Resultado MetodoSecante(ParametrosRaiz parametros)
@@ -32,12 +47,19 @@ namespace AnalisisNumerico.Logica.Unidad_1
             double fxi = 0;
             double fxii = 0;
             double fxd = 0;
-            double x11=0;
-            double x2=0;
+            double x11 = 0;
+            double x2 = 0;
             double dfx = 0;
+            
+            this.Xr = 0;
+            this.contador = 0;
+            this.Xant = 0;
+            this.fXr = 0;
+            this.ErrorRelativo = 0;
+
             Resultado res = new Resultado();
 
-            if (parametros.TipoMetodo==TipoMetodo.Tangente)
+            if (parametros.TipoMetodo == TipoMetodo.Tangente)
             {
                 var xii = new Argument("x", (parametros.ValorInicial + parametros.Tolerancia));
                 x11 = (parametros.ValorInicial + parametros.Tolerancia);
@@ -47,8 +69,10 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 if (fxi == 0)
                 {
                     res.Raiz = x1;
-                    res.Mensaje = "Se encontró la raiz";
-                    res.Iteraciones = parametros.Iteraciones;
+                    res.Mensaje = "SE ENCONTRO LA RAIZ.";
+                    res.Error = ErrorRelativo;
+                    res.Iteraciones = 1;
+                    res.TipoResultado = TipoResultado.Raiz;
                     return res;
                 }
                 dfx = ((fxii - fxi) / parametros.Tolerancia);
@@ -61,74 +85,85 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 fxd = EvaluarExpresion(nombre, funcion, xd);
                 if (fxi * fxd == 0)
                 {
-                    if (fxi==0)
-                    {
-                        res.Raiz = x1;
-                        res.Mensaje = "Se encontró la raiz";
-                        res.Iteraciones = parametros.Iteraciones;
-                        return res;
-                    }
-                    else
+                    res.Mensaje = "SE ENCONTRO LA RAIZ.";
+                    res.Iteraciones = 1;
+                    res.TipoResultado = TipoResultado.Raiz;
+                    res.Raiz = x1;
+
+                    if (fxd == 0)
                     {
                         res.Raiz = x2;
-                        res.Mensaje = "Se encontró la raiz";
-                        res.Iteraciones = parametros.Iteraciones;
-                        return res;
-                    }                    
+                    }
+                    return res;
                 }
-            }               
-            var contador = 0;
-            double Xant = 0;
-            double Xr = 0;           
+            }        
             //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ    
-            if (parametros.TipoMetodo == TipoMetodo.Tangente)
-            {
-                Xr = AveriguarXrTangente(fxi,fxd,dfx,x1,x2); 
-            }
-            else
-            {
-                Xr = AveriguarXrSecante(fxi, fxd, dfx, x1, x2);
-            }            
-            contador += 1;
-            var fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
-            var ErrorRelativo = (Xr - Xant) / Xr;
 
-            if (Math.Round(fXr,2) == 0)
+            this.AveriguarDatos(averiguarXr, x1, x2, fxi, fxd, dfx, nombre, funcion);
+
+            if (Math.Round(fXr, 2) == 0)
             {
                 res.Raiz = Math.Round(Xr, 6);
-                res.Mensaje = "Se encontró la raiz";
+                res.Mensaje = "SE ENCONTRO LA RAIZ.";
                 res.Iteraciones = contador;
+                res.TipoResultado = TipoResultado.Raiz;
                 res.Error = ErrorRelativo;
                 return res;
             }
 
             while (!(Math.Abs(fXr) < parametros.Tolerancia || ((Math.Abs(ErrorRelativo) < parametros.Tolerancia) && (Xr != 0)) || (contador >= parametros.Iteraciones)))
-            {                
+            {
                 Xant = Xr;
-                if (parametros.TipoMetodo == TipoMetodo.Tangente)
+
+                if (parametros.TipoMetodo == TipoMetodo.Secante)
                 {
-                    Xr = AveriguarXrTangente(fxi, fxd, dfx, x1, x2);
-                }
-                else
-                {
-                    x2=x1;
+                    x2 = x1;
                     x1 = Xr;
                     fxi = EvaluarExpresion(nombre, funcion, new Argument("x", x1));
                     fxd = EvaluarExpresion(nombre, funcion, new Argument("x", x2));
-                    Xr = AveriguarXrSecante(fxi, fxd, dfx, x1, x2);
                 }
-                contador += 1;
-                fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
-                ErrorRelativo = (Xr - Xant) / Xr;
+                else
+                {
+                    x1 = Xr;
+                    fxi = EvaluarExpresion(nombre, funcion, new Argument("x", x1));
+                }
+
+                this.AveriguarDatos(averiguarXr, x1, x2, fxi, fxd, dfx, nombre, funcion);
             }
-            res.Raiz = Math.Round(Xr, 6);
-            res.Mensaje = "Se encontró la raiz";
-            res.Iteraciones = contador;
-            res.Error = ErrorRelativo;
-            return res;
+
+            if (contador == parametros.Iteraciones && double.IsNaN(ErrorRelativo) && double.IsNaN(Xr))
+            {
+                if (parametros.TipoMetodo==TipoMetodo.Tangente)
+                {
+                    res.Mensaje = "EL VALOR INGRESADO "+ parametros.ValorInicial+" ES INCORRECTO. NO SE PUEDE EVALUAR LA FUNCION O LA RECTA TANGENTE EVALUADA EN ESE PUNTO ES CONSTANTE.";
+                }
+                else
+                {
+                    res.Mensaje = "NO SE PUEDE EVALUAR LA FUNCION EN LOS PUNTOS INGRESADOS";
+                }               
+                res.Raiz = null;
+                res.Error = null;
+                res.TipoResultado = TipoResultado.Constante;
+                return res;
+            }
+            else
+            {
+                res.Raiz = Math.Round(Xr, 6);
+                res.Mensaje = "SE ENCONTRO LA RAIZ.";
+                res.TipoResultado = TipoResultado.Raiz;
+                res.Iteraciones = contador;
+                res.Error = ErrorRelativo;
+                return res;
+            }
         }
 
-       
+        private void AveriguarDatos(MetodoAbiertoDelegate averiguarXr, double x1, double x2, double fxi, double fxd, double dfx,string nombre, Function funcion)
+        {
+            Xr = averiguarXr(fxi,fxd,dfx,x1,x2);
+            contador += 1;
+            fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
+            ErrorRelativo = Math.Abs(Xr - Xant) / Xr;
+        }
 
         public double EvaluarExpresion(string nombre, Function funcion, Argument argumento)
         {

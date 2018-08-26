@@ -25,13 +25,13 @@ namespace AnalisisNumerico.UI
         {
             ParametrosRaiz parametros = new ParametrosRaiz();
 
-            if (txtboxFuncion.Text!="" && txtboxIteraciones.Text!="" && txtboxLimiteMaximo.Text!="" && txtboxLimiteMinimo.Text!="" && txtboxTolerancia.Text!="" )
+            if (txtboxFuncion.Text != "" && txtboxIteraciones.Text != "" && txtboxLimiteMinimo.Text != "" && txtboxLimiteMaximo.Text!="" && txtboxTolerancia.Text != "")
             {
                 parametros.Funcion = txtboxFuncion.Text;
                 parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
                 parametros.Tolerancia = Convert.ToDouble(txtboxTolerancia.Text);
                 parametros.ValorInicial = Convert.ToDouble(txtboxLimiteMinimo.Text);
-                parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text); 
+                parametros.ValorFinal = Convert.ToDouble(txtboxLimiteMaximo.Text);
             }
             else
             {
@@ -40,33 +40,21 @@ namespace AnalisisNumerico.UI
             }
 
             Resultado resultado = new Resultado();
-               
-            if (comboMetodo.Text=="BISECCION")
+
+            if (comboMetodo.Text == "BISECCION")
             {
                 parametros.TipoMetodo = TipoMetodo.Biseccion;
-                resultado=this.metodosRaices.MetodoBiseccion(parametros);
+                resultado = this.metodosRaices.MetodoBiseccion(parametros);
             }
             else
             {
                 parametros.TipoMetodo = TipoMetodo.ReglaFalsa;
-                resultado= this.metodosRaices.MetodoReglaFalsa(parametros);
+                resultado = this.metodosRaices.MetodoReglaFalsa(parametros);
             }
 
-            if (resultado.Raiz == null)
+            if (resultado.TipoResultado == TipoResultado.Raiz)
             {
-
-                labelResultado.Text = resultado.Mensaje;
-                labelResultado.Visible = true;
-                labelDetalles.Visible = false;
-                labelRaiz.Visible = false;
-                txtRaiz.Visible = false;
-                labelIteraciones.Visible = false;
-                labelIteracionesResultado.Visible = false;
-                labelError.Visible = false;
-                labelErrorResultado.Visible = false;
-            }
-            else
-            {
+                labelResultado.Height = 40;
                 labelResultado.Text = resultado.Mensaje;
                 labelResultado.Visible = true;
                 labelDetalles.Visible = true;
@@ -81,6 +69,34 @@ namespace AnalisisNumerico.UI
                 labelErrorResultado.Text = Convert.ToString(resultado.Error);
                 labelIteracionesResultado.Text = Convert.ToString(resultado.Iteraciones);
                 txtRaiz.Text = Convert.ToString(resultado.Raiz);
+            }
+
+            if (resultado.TipoResultado == TipoResultado.FueradeLimites || resultado.TipoResultado == TipoResultado.FuncionIncorrecta)
+            {
+                labelResultado.Height = 40;
+                labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
+                labelDetalles.Visible = false;
+                labelRaiz.Visible = false;
+                txtRaiz.Visible = false;
+                labelIteraciones.Visible = false;
+                labelIteracionesResultado.Visible = false;
+                labelError.Visible = false;
+                labelErrorResultado.Visible = false;
+            }
+
+            if (resultado.TipoResultado == TipoResultado.Constante)
+            {
+                labelResultado.Text = resultado.Mensaje;
+                labelResultado.Visible = true;
+                labelResultado.Height = 80;
+                labelDetalles.Visible = false;
+                labelRaiz.Visible = false;
+                txtRaiz.Visible = false;
+                labelIteraciones.Visible = false;
+                labelIteracionesResultado.Visible = false;
+                labelError.Visible = false;
+                labelErrorResultado.Visible = false;
             }
         }
 
