@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMetodosAbiertos));
             this.labelErrorResultado = new System.Windows.Forms.Label();
             this.labelIteracionesResultado = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
@@ -59,9 +60,9 @@
             this.labelErrorResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelErrorResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelErrorResultado.Location = new System.Drawing.Point(540, 400);
+            this.labelErrorResultado.Location = new System.Drawing.Point(441, 400);
             this.labelErrorResultado.Name = "labelErrorResultado";
-            this.labelErrorResultado.Size = new System.Drawing.Size(90, 30);
+            this.labelErrorResultado.Size = new System.Drawing.Size(297, 30);
             this.labelErrorResultado.TabIndex = 46;
             this.labelErrorResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -70,7 +71,7 @@
             this.labelIteracionesResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelIteracionesResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIteracionesResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelIteracionesResultado.Location = new System.Drawing.Point(375, 400);
+            this.labelIteracionesResultado.Location = new System.Drawing.Point(276, 400);
             this.labelIteracionesResultado.Name = "labelIteracionesResultado";
             this.labelIteracionesResultado.Size = new System.Drawing.Size(150, 30);
             this.labelIteracionesResultado.TabIndex = 45;
@@ -81,9 +82,9 @@
             this.labelError.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelError.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelError.Location = new System.Drawing.Point(540, 350);
+            this.labelError.Location = new System.Drawing.Point(441, 350);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(90, 40);
+            this.labelError.Size = new System.Drawing.Size(297, 40);
             this.labelError.TabIndex = 44;
             this.labelError.Text = "ERROR";
             this.labelError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +94,7 @@
             this.labelIteraciones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelIteraciones.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIteraciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelIteraciones.Location = new System.Drawing.Point(375, 350);
+            this.labelIteraciones.Location = new System.Drawing.Point(276, 350);
             this.labelIteraciones.Name = "labelIteraciones";
             this.labelIteraciones.Size = new System.Drawing.Size(150, 40);
             this.labelIteraciones.TabIndex = 43;
@@ -105,7 +106,7 @@
             this.labelRaiz.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelRaiz.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRaiz.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelRaiz.Location = new System.Drawing.Point(271, 351);
+            this.labelRaiz.Location = new System.Drawing.Point(172, 351);
             this.labelRaiz.Name = "labelRaiz";
             this.labelRaiz.Size = new System.Drawing.Size(90, 40);
             this.labelRaiz.TabIndex = 42;
@@ -117,7 +118,7 @@
             this.labelDetalles.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelDetalles.Font = new System.Drawing.Font("Arial", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetalles.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelDetalles.Location = new System.Drawing.Point(126, 351);
+            this.labelDetalles.Location = new System.Drawing.Point(27, 351);
             this.labelDetalles.Name = "labelDetalles";
             this.labelDetalles.Size = new System.Drawing.Size(139, 79);
             this.labelDetalles.TabIndex = 41;
@@ -129,9 +130,9 @@
             this.labelResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelResultado.Location = new System.Drawing.Point(87, 292);
+            this.labelResultado.Location = new System.Drawing.Point(32, 292);
             this.labelResultado.Name = "labelResultado";
-            this.labelResultado.Size = new System.Drawing.Size(571, 40);
+            this.labelResultado.Size = new System.Drawing.Size(706, 40);
             this.labelResultado.TabIndex = 40;
             this.labelResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -139,7 +140,7 @@
             // 
             this.labelTangente.AutoSize = true;
             this.labelTangente.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTangente.Location = new System.Drawing.Point(109, 87);
+            this.labelTangente.Location = new System.Drawing.Point(99, 87);
             this.labelTangente.Name = "labelTangente";
             this.labelTangente.Size = new System.Drawing.Size(578, 24);
             this.labelTangente.TabIndex = 39;
@@ -168,7 +169,7 @@
             // 
             this.labelSecante.AutoSize = true;
             this.labelSecante.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSecante.Location = new System.Drawing.Point(225, 87);
+            this.labelSecante.Location = new System.Drawing.Point(215, 87);
             this.labelSecante.Name = "labelSecante";
             this.labelSecante.Size = new System.Drawing.Size(345, 24);
             this.labelSecante.TabIndex = 36;
@@ -177,7 +178,7 @@
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(275, 404);
+            this.txtRaiz.Location = new System.Drawing.Point(176, 404);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(86, 26);
             this.txtRaiz.TabIndex = 35;
@@ -186,7 +187,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(432, 219);
+            this.btnCalcular.Location = new System.Drawing.Point(422, 219);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(226, 44);
             this.btnCalcular.TabIndex = 34;
@@ -198,7 +199,7 @@
             // 
             this.labelLimiteMaximo.AutoSize = true;
             this.labelLimiteMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLimiteMaximo.Location = new System.Drawing.Point(429, 183);
+            this.labelLimiteMaximo.Location = new System.Drawing.Point(419, 183);
             this.labelLimiteMaximo.Name = "labelLimiteMaximo";
             this.labelLimiteMaximo.Size = new System.Drawing.Size(123, 18);
             this.labelLimiteMaximo.TabIndex = 33;
@@ -207,7 +208,7 @@
             // txtboxLimiteMaximo
             // 
             this.txtboxLimiteMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLimiteMaximo.Location = new System.Drawing.Point(558, 180);
+            this.txtboxLimiteMaximo.Location = new System.Drawing.Point(548, 180);
             this.txtboxLimiteMaximo.Name = "txtboxLimiteMaximo";
             this.txtboxLimiteMaximo.Size = new System.Drawing.Size(100, 26);
             this.txtboxLimiteMaximo.TabIndex = 32;
@@ -216,7 +217,7 @@
             // 
             this.labelLimiteMinimo.AutoSize = true;
             this.labelLimiteMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLimiteMinimo.Location = new System.Drawing.Point(429, 140);
+            this.labelLimiteMinimo.Location = new System.Drawing.Point(419, 140);
             this.labelLimiteMinimo.Name = "labelLimiteMinimo";
             this.labelLimiteMinimo.Size = new System.Drawing.Size(115, 18);
             this.labelLimiteMinimo.TabIndex = 31;
@@ -225,7 +226,7 @@
             // txtboxLimiteMinimo
             // 
             this.txtboxLimiteMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLimiteMinimo.Location = new System.Drawing.Point(558, 139);
+            this.txtboxLimiteMinimo.Location = new System.Drawing.Point(548, 139);
             this.txtboxLimiteMinimo.Name = "txtboxLimiteMinimo";
             this.txtboxLimiteMinimo.Size = new System.Drawing.Size(100, 26);
             this.txtboxLimiteMinimo.TabIndex = 30;
@@ -234,7 +235,7 @@
             // 
             this.Iteraciones.AutoSize = true;
             this.Iteraciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Iteraciones.Location = new System.Drawing.Point(88, 233);
+            this.Iteraciones.Location = new System.Drawing.Point(78, 233);
             this.Iteraciones.Name = "Iteraciones";
             this.Iteraciones.Size = new System.Drawing.Size(113, 18);
             this.Iteraciones.TabIndex = 29;
@@ -243,7 +244,7 @@
             // txtboxIteraciones
             // 
             this.txtboxIteraciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxIteraciones.Location = new System.Drawing.Point(214, 228);
+            this.txtboxIteraciones.Location = new System.Drawing.Point(204, 228);
             this.txtboxIteraciones.Name = "txtboxIteraciones";
             this.txtboxIteraciones.Size = new System.Drawing.Size(198, 26);
             this.txtboxIteraciones.TabIndex = 28;
@@ -252,7 +253,7 @@
             // 
             this.Tolerancia.AutoSize = true;
             this.Tolerancia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tolerancia.Location = new System.Drawing.Point(88, 182);
+            this.Tolerancia.Location = new System.Drawing.Point(78, 182);
             this.Tolerancia.Name = "Tolerancia";
             this.Tolerancia.Size = new System.Drawing.Size(108, 18);
             this.Tolerancia.TabIndex = 27;
@@ -261,7 +262,7 @@
             // txtboxTolerancia
             // 
             this.txtboxTolerancia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxTolerancia.Location = new System.Drawing.Point(214, 182);
+            this.txtboxTolerancia.Location = new System.Drawing.Point(204, 182);
             this.txtboxTolerancia.Name = "txtboxTolerancia";
             this.txtboxTolerancia.Size = new System.Drawing.Size(198, 26);
             this.txtboxTolerancia.TabIndex = 26;
@@ -270,7 +271,7 @@
             // 
             this.Funcion.AutoSize = true;
             this.Funcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Funcion.Location = new System.Drawing.Point(88, 140);
+            this.Funcion.Location = new System.Drawing.Point(78, 140);
             this.Funcion.Name = "Funcion";
             this.Funcion.Size = new System.Drawing.Size(78, 18);
             this.Funcion.TabIndex = 25;
@@ -279,7 +280,7 @@
             // txtboxFuncion
             // 
             this.txtboxFuncion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxFuncion.Location = new System.Drawing.Point(214, 140);
+            this.txtboxFuncion.Location = new System.Drawing.Point(204, 140);
             this.txtboxFuncion.Name = "txtboxFuncion";
             this.txtboxFuncion.Size = new System.Drawing.Size(198, 26);
             this.txtboxFuncion.TabIndex = 24;
@@ -325,6 +326,7 @@
             this.Controls.Add(this.Funcion);
             this.Controls.Add(this.txtboxFuncion);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioMetodosAbiertos";
             this.Text = "METODOS ABIERTOS";
             this.Load += new System.EventHandler(this.FormularioMetodosAbiertos_Load);

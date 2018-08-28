@@ -159,7 +159,7 @@
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(280, 403);
+            this.txtRaiz.Location = new System.Drawing.Point(179, 405);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(86, 26);
             this.txtRaiz.TabIndex = 12;
@@ -209,9 +209,9 @@
             this.labelResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelResultado.Location = new System.Drawing.Point(95, 294);
+            this.labelResultado.Location = new System.Drawing.Point(28, 294);
             this.labelResultado.Name = "labelResultado";
-            this.labelResultado.Size = new System.Drawing.Size(576, 40);
+            this.labelResultado.Size = new System.Drawing.Size(718, 40);
             this.labelResultado.TabIndex = 17;
             this.labelResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -220,7 +220,7 @@
             this.labelDetalles.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelDetalles.Font = new System.Drawing.Font("Arial", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetalles.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelDetalles.Location = new System.Drawing.Point(131, 350);
+            this.labelDetalles.Location = new System.Drawing.Point(30, 352);
             this.labelDetalles.Name = "labelDetalles";
             this.labelDetalles.Size = new System.Drawing.Size(139, 79);
             this.labelDetalles.TabIndex = 18;
@@ -232,7 +232,7 @@
             this.labelRaiz.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelRaiz.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRaiz.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelRaiz.Location = new System.Drawing.Point(276, 350);
+            this.labelRaiz.Location = new System.Drawing.Point(175, 352);
             this.labelRaiz.Name = "labelRaiz";
             this.labelRaiz.Size = new System.Drawing.Size(90, 40);
             this.labelRaiz.TabIndex = 19;
@@ -244,7 +244,7 @@
             this.labelIteraciones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelIteraciones.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIteraciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelIteraciones.Location = new System.Drawing.Point(380, 349);
+            this.labelIteraciones.Location = new System.Drawing.Point(279, 351);
             this.labelIteraciones.Name = "labelIteraciones";
             this.labelIteraciones.Size = new System.Drawing.Size(150, 40);
             this.labelIteraciones.TabIndex = 20;
@@ -256,9 +256,9 @@
             this.labelError.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelError.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelError.Location = new System.Drawing.Point(545, 349);
+            this.labelError.Location = new System.Drawing.Point(444, 351);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(90, 40);
+            this.labelError.Size = new System.Drawing.Size(302, 40);
             this.labelError.TabIndex = 21;
             this.labelError.Text = "ERROR";
             this.labelError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,7 +268,7 @@
             this.labelIteracionesResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelIteracionesResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIteracionesResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelIteracionesResultado.Location = new System.Drawing.Point(380, 399);
+            this.labelIteracionesResultado.Location = new System.Drawing.Point(279, 401);
             this.labelIteracionesResultado.Name = "labelIteracionesResultado";
             this.labelIteracionesResultado.Size = new System.Drawing.Size(150, 30);
             this.labelIteracionesResultado.TabIndex = 22;
@@ -279,9 +279,9 @@
             this.labelErrorResultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelErrorResultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorResultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelErrorResultado.Location = new System.Drawing.Point(545, 399);
+            this.labelErrorResultado.Location = new System.Drawing.Point(444, 401);
             this.labelErrorResultado.Name = "labelErrorResultado";
-            this.labelErrorResultado.Size = new System.Drawing.Size(90, 30);
+            this.labelErrorResultado.Size = new System.Drawing.Size(302, 30);
             this.labelErrorResultado.TabIndex = 23;
             this.labelErrorResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

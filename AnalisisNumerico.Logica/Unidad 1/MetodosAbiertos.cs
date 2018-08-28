@@ -57,6 +57,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             this.fXr = 0;
             this.ErrorRelativo = 0;
 
+
             Resultado res = new Resultado();
 
             if (parametros.TipoMetodo == TipoMetodo.Tangente)
@@ -76,6 +77,14 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     return res;
                 }
                 dfx = ((fxii - fxi) / parametros.Tolerancia);
+
+                //if (double.IsNaN(fxi) || double.IsNaN(fxii))
+                //{
+                //    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                //    res.Raiz = null;
+                //    res.TipoResultado = TipoResultado.FuncionIncorrecta;
+                //    return res;
+                //}
             }
             else
             {
@@ -96,7 +105,16 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     }
                     return res;
                 }
-            }        
+                //if (double.IsNaN(fxi) || double.IsNaN(fxd))
+                //{
+                //    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                //    res.Raiz = null;
+                //    res.TipoResultado = TipoResultado.FuncionIncorrecta;
+                //    return res;
+                //}
+            }      
+            //HOLA CHAU  
+
             //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ    
 
             this.AveriguarDatos(averiguarXr, x1, x2, fxi, fxd, dfx, nombre, funcion);
@@ -135,11 +153,12 @@ namespace AnalisisNumerico.Logica.Unidad_1
             {
                 if (parametros.TipoMetodo==TipoMetodo.Tangente)
                 {
-                    res.Mensaje = "EL VALOR INGRESADO "+ parametros.ValorInicial+" ES INCORRECTO. NO SE PUEDE EVALUAR LA FUNCION O LA RECTA TANGENTE EVALUADA EN ESE PUNTO ES CONSTANTE.";
+                    
+                    res.Mensaje = "EL VALOR INGRESADO "+ parametros.ValorInicial+ " ES INCORRECTO. LA RECTA TANGENTE TRAZADA EN ESE PUNTO ES CONSTANTE O NO SE PUEDE EVALUAR LA FUNCION EN DICHO PUNTO.";
                 }
                 else
                 {
-                    res.Mensaje = "NO SE PUEDE EVALUAR LA FUNCION EN LOS PUNTOS INGRESADOS";
+                    res.Mensaje = "LOS VALORES INGRESADOS SON INCORRECTOS. NO SE PUEDE EVALUAR LA FUNCION EN DICHOS PUNTOS O LA RECTA TRAZADA CORTA EL EJE X POR FUERA DE LOS VALORES DE LA FUNCION.";
                 }               
                 res.Raiz = null;
                 res.Error = null;
