@@ -78,13 +78,13 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 }
                 dfx = ((fxii - fxi) / parametros.Tolerancia);
 
-                //if (double.IsNaN(fxi) || double.IsNaN(fxii))
-                //{
-                //    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
-                //    res.Raiz = null;
-                //    res.TipoResultado = TipoResultado.FuncionIncorrecta;
-                //    return res;
-                //}
+                if (double.IsNaN(fxi) || double.IsNaN(fxii))
+                {
+                    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                    res.Raiz = null;
+                    res.TipoResultado = TipoResultado.FuncionIncorrecta;
+                    return res;
+                }
             }
             else
             {
@@ -105,15 +105,15 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     }
                     return res;
                 }
-                //if (double.IsNaN(fxi) || double.IsNaN(fxd))
-                //{
-                //    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
-                //    res.Raiz = null;
-                //    res.TipoResultado = TipoResultado.FuncionIncorrecta;
-                //    return res;
-                //}
+                if (double.IsNaN(fxi) || double.IsNaN(fxd))
+                {
+                    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                    res.Raiz = null;
+                    res.TipoResultado = TipoResultado.FuncionIncorrecta;
+                    return res;
+                }
             }      
-            //HOLA CHAU  
+              
 
             //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ    
 
@@ -158,7 +158,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 }
                 else
                 {
-                    res.Mensaje = "LOS VALORES INGRESADOS SON INCORRECTOS. NO SE PUEDE EVALUAR LA FUNCION EN DICHOS PUNTOS O LA RECTA TRAZADA CORTA EL EJE X POR FUERA DE LOS VALORES DE LA FUNCION.";
+                    res.Mensaje = "LOS VALORES INGRESADOS SON INCORRECTOS. NO SE PUEDE EVALUAR LA FUNCION EN DICHOS PUNTOS O LA RECTA SECANTE TRAZADA ES CONTASTANTE O CORTA EL EJE X FUERA DEL DOMINIO DE LA FUNCION.";
                 }               
                 res.Raiz = null;
                 res.Error = null;
@@ -181,7 +181,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             Xr = averiguarXr(fxi,fxd,dfx,x1,x2);
             contador += 1;
             fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
-            ErrorRelativo = Math.Abs(Xr - Xant) / Xr;
+            ErrorRelativo = Math.Abs((Xr - Xant) / Xr);
         }
 
         public double EvaluarExpresion(string nombre, Function funcion, Argument argumento)

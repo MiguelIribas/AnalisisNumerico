@@ -110,7 +110,7 @@ namespace AnalisisNumerico.UI
             {
                 labelResultado.Text = resultado.Mensaje;
                 labelResultado.Visible = true;
-                labelResultado.Height = 80;
+                labelResultado.Height = 100;
                 labelDetalles.Visible = false;
                 labelRaiz.Visible = false;
                 txtRaiz.Visible = false;

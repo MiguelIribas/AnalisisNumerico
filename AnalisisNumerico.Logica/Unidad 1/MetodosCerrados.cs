@@ -131,7 +131,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             Xr = averiguarXr(x1, x2, fXd, fXi);
             contador += 1;
             fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
-            ErrorRelativo = Math.Abs(Xr - Xant) / Xr;
+            ErrorRelativo = Math.Abs((Xr - Xant) / Xr);
         }
 
         public double AveriguarXrBiseccion(double x1, double x2, double Fxd, double Fxi)
