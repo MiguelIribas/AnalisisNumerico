@@ -125,7 +125,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             var fX = expresion.calculate();
             return fX;
         }
-
         private void AveriguarDatos(MetodoCerradoDelegate averiguarXr, double x1, double x2, double fXi, double fXd, string nombre, Function funcion)
         {
             Xr = averiguarXr(x1, x2, fXd, fXi);
@@ -133,13 +132,11 @@ namespace AnalisisNumerico.Logica.Unidad_1
             fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             ErrorRelativo = Math.Abs((Xr - Xant) / Xr);
         }
-
         public double AveriguarXrBiseccion(double x1, double x2, double Fxd, double Fxi)
         {
             var Xr = ((x1 + x2) / 2);
             return Xr;
         }
-
         public double AveriguarXrReglaFalsa(double x1, double x2, double Fxd, double Fxi)
         {
             var Xr = (Fxd * x1 - Fxi * x2) / (Fxd - Fxi);

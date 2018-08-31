@@ -57,16 +57,13 @@ namespace AnalisisNumerico.Logica.Unidad_1
             this.fXr = 0;
             this.ErrorRelativo = 0;
 
-
             Resultado res = new Resultado();
-
             if (parametros.TipoMetodo == TipoMetodo.Tangente)
             {
                 var xii = new Argument("x", (parametros.ValorInicial + parametros.Tolerancia));
                 x11 = (parametros.ValorInicial + parametros.Tolerancia);
                 fxi = EvaluarExpresion(nombre, funcion, xi);
                 fxii = EvaluarExpresion(nombre, funcion, xii);
-
                 if (fxi == 0)
                 {
                     res.Raiz = x1;
@@ -113,9 +110,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     return res;
                 }
             }      
-
             this.AveriguarDatos(averiguarXr, x1, x2, fxi, fxd, dfx, nombre, funcion);
-
             if (Math.Round(fXr, 2) == 0)
             {
                 res.Raiz = Math.Round(Xr, 6);
@@ -129,7 +124,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             while (!(Math.Abs(fXr) < parametros.Tolerancia || ((Math.Abs(ErrorRelativo) < parametros.Tolerancia) && (Xr != 0)) || (contador >= parametros.Iteraciones)))
             {
                 Xant = Xr;
-
                 if (parametros.TipoMetodo == TipoMetodo.Secante)
                 {
                     x2 = x1;
@@ -172,7 +166,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 return res;
             }
         }
-
         private void AveriguarDatos(MetodoAbiertoDelegate averiguarXr, double x1, double x2, double fxi, double fxd, double dfx,string nombre, Function funcion)
         {
             Xr = averiguarXr(fxi,fxd,dfx,x1,x2);
@@ -180,20 +173,17 @@ namespace AnalisisNumerico.Logica.Unidad_1
             fXr = EvaluarExpresion(nombre, funcion, new Argument("x", Xr));
             ErrorRelativo = Math.Abs((Xr - Xant) / Xr);
         }
-
         public double EvaluarExpresion(string nombre, Function funcion, Argument argumento)
         {
             var expresion = new Expression(nombre, funcion, argumento);
             var fX = expresion.calculate();
             return fX;
         }
-
         public double AveriguarXrTangente (double fxi, double fxd, double dfx, double x1, double x2)
         {
             var Xr = (x1 - (fxi / dfx));
             return Xr;
         }
-
         public double AveriguarXrSecante(double fxi, double fxd, double dfx, double x1, double x2)
         {
             var Xr = ((fxd * x1)-(fxi*x2))/(fxd-fxi);
