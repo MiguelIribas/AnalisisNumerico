@@ -9,7 +9,7 @@ namespace AnalisisNumerico.Logica.Tests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod] //SIII DAAAA
+        [TestMethod]
         public void BiseccionEjercicio1()
         {
             MetodosCerrados Biseccion = new MetodosCerrados();
@@ -20,7 +20,7 @@ namespace AnalisisNumerico.Logica.Tests
             Assert.AreEqual(ResultadoMetodoBiseccion.Raiz, res.Raiz);
         }
 
-        [TestMethod] //MAL ESCRITA LA FUNCION
+        [TestMethod]
         public void BiseccionEjercicio2()
         {
             MetodosCerrados Biseccion = new MetodosCerrados();
@@ -31,7 +31,7 @@ namespace AnalisisNumerico.Logica.Tests
             Assert.AreEqual(ResultadoMetodoBiseccion2.Raiz, res.Raiz);
         }
 
-        [TestMethod] //SIII DAAAA
+        [TestMethod]
         public void BiseccionEjercicio3()
         {
             MetodosCerrados Biseccion = new MetodosCerrados();
@@ -44,7 +44,7 @@ namespace AnalisisNumerico.Logica.Tests
         
 
                
-        [TestMethod] //SIII DAAAA
+        [TestMethod]
         public void ReglaFalsaEjercicio1()
         {
             MetodosCerrados ReglaFalsa = new MetodosCerrados();
@@ -55,7 +55,7 @@ namespace AnalisisNumerico.Logica.Tests
             Assert.AreEqual(ResultadoMetodoReglaFalsa.Raiz, res.Raiz);
         }
 
-        [TestMethod] //MAL ESCRITA LA FUNCION
+        [TestMethod]
         public void ReglaFalsaEjercicio2()
         {
             MetodosCerrados ReglaFalsa = new MetodosCerrados();
@@ -66,7 +66,7 @@ namespace AnalisisNumerico.Logica.Tests
             Assert.AreEqual(ResultadoMetodoReglaFalsa.Raiz, res.Raiz);
         }
 
-        [TestMethod] //SIII DAAAA
+        [TestMethod]
         public void ReglaFalsaEjercicio3()
         {
             MetodosCerrados ReglaFalsa = new MetodosCerrados();
@@ -79,7 +79,7 @@ namespace AnalisisNumerico.Logica.Tests
 
 
 
-        [TestMethod] //VER DE USAR LAS MISMAS FUNCIONES PERO INGRESANDO UN SOLO VALOR
+        [TestMethod]
         public void TangenteEjercicio1()
         {
             MetodosAbiertos Tangente = new MetodosAbiertos();
@@ -92,7 +92,7 @@ namespace AnalisisNumerico.Logica.Tests
 
         }
 
-        [TestMethod] //VER DE USAR LAS MISMAS FUNCIONES PERO INGRESANDO UN SOLO VALOR
+        [TestMethod]
         public void TangenteEjercicio2()
         {
             MetodosAbiertos Tangente = new MetodosAbiertos();
@@ -105,7 +105,7 @@ namespace AnalisisNumerico.Logica.Tests
 
         }
 
-        [TestMethod] //VER DE USAR LAS MISMAS FUNCIONES PERO INGRESANDO UN SOLO VALOR
+        [TestMethod]
         public void TangenteEjercicio3()
         {
             MetodosAbiertos Tangente = new MetodosAbiertos();
@@ -120,7 +120,7 @@ namespace AnalisisNumerico.Logica.Tests
 
 
 
-        [TestMethod] //SIII DAAAA
+        [TestMethod]
         public void SecanteEjercicio1()
         {
             MetodosAbiertos Secante = new MetodosAbiertos();
@@ -133,7 +133,7 @@ namespace AnalisisNumerico.Logica.Tests
 
         }
 
-        [TestMethod] //MAL ESCRITA LA FUNCION
+        [TestMethod]
         public void SecanteEjercicio2()
         {
             MetodosAbiertos Secante = new MetodosAbiertos();
@@ -146,7 +146,7 @@ namespace AnalisisNumerico.Logica.Tests
 
         }
 
-        [TestMethod]//SIII DAAAA
+        [TestMethod]
         public void SecanteEjercicio3()
         {
             MetodosAbiertos Secante = new MetodosAbiertos();

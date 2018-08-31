@@ -113,9 +113,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
                     return res;
                 }
             }      
-              
-
-            //VER EN QUE CASOS LA FUNCION NO TIENE RAIZ    
 
             this.AveriguarDatos(averiguarXr, x1, x2, fxi, fxd, dfx, nombre, funcion);
 
@@ -191,7 +188,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             return fX;
         }
 
-        public double AveriguarXrTangente (double fxi, double fxd, double dfx, double x1, double x2) //(double xi, double fxi, double dfx)
+        public double AveriguarXrTangente (double fxi, double fxd, double dfx, double x1, double x2)
         {
             var Xr = (x1 - (fxi / dfx));
             return Xr;
