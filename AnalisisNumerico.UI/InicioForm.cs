@@ -40,5 +40,12 @@ namespace AnalisisNumerico.UI
             FormularioMetodosAbiertos.Owner = this;
             FormularioMetodosAbiertos.ShowDialog();
         }
+
+        private void gAUSSJORDANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioGaussJordan FormularioGaussJordan = Program.container.GetInstance<FormularioGaussJordan>();
+            FormularioGaussJordan.Owner = this;
+            FormularioGaussJordan.ShowDialog();
+        }
     }
 }

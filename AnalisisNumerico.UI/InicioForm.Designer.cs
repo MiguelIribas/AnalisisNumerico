@@ -97,6 +97,7 @@
             this.gAUSSJORDANToolStripMenuItem.Name = "gAUSSJORDANToolStripMenuItem";
             this.gAUSSJORDANToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.gAUSSJORDANToolStripMenuItem.Text = "GAUSS-JORDAN";
+            this.gAUSSJORDANToolStripMenuItem.Click += new System.EventHandler(this.gAUSSJORDANToolStripMenuItem_Click);
             // 
             // gAUSSSEDELToolStripMenuItem
             // 

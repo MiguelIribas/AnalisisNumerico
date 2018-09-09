@@ -47,6 +47,7 @@
     <Compile Include="Unidad 1\MetodosAbiertos.cs" />
     <Compile Include="Unidad 1\MetodosCerrados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unidad 2\MetodosEcuaciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="docs\member-search-index.zip" />
@@ -237,6 +238,7 @@
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

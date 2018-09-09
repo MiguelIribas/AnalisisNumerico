@@ -49,16 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormularioMetodosAbiertos.cs">
+    <Compile Include="FormularioGaussJordan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioMetodosAbiertos.Designer.cs">
+    <Compile Include="FormularioGaussJordan.Designer.cs">
+      <DependentUpon>FormularioGaussJordan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad 1\FormularioMetodosAbiertos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad 1\FormularioMetodosAbiertos.Designer.cs">
       <DependentUpon>FormularioMetodosAbiertos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioMetodosCerrados.cs">
+    <Compile Include="Unidad 1\FormularioMetodosCerrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioMetodosCerrados.Designer.cs">
+    <Compile Include="Unidad 1\FormularioMetodosCerrados.Designer.cs">
       <DependentUpon>FormularioMetodosCerrados.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioForm.cs">
@@ -79,10 +85,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormularioMetodosAbiertos.resx">
+    <EmbeddedResource Include="FormularioGaussJordan.resx">
+      <DependentUpon>FormularioGaussJordan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad 1\FormularioMetodosAbiertos.resx">
       <DependentUpon>FormularioMetodosAbiertos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioMetodosCerrados.resx">
+    <EmbeddedResource Include="Unidad 1\FormularioMetodosCerrados.resx">
       <DependentUpon>FormularioMetodosCerrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
@@ -106,6 +115,9 @@
       <Project>{d1d0bc26-d4b9-4b8d-919a-2b981c9e3c26}</Project>
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Unidad 2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

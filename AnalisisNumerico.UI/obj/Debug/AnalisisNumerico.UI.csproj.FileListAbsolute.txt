@@ -59,3 +59,4 @@ E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Formulari
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMetodosAbiertos.resources
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Properties.Resources.resources
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Properties.Resources.resources
+D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioGaussJordan.resources

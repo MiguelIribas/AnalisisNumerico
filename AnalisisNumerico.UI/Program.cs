@@ -1,4 +1,5 @@
 ﻿using AnalisisNumerico.Entidades;
+using AnalisisNumerico.Entidades.Ecuaciones;
 using AnalisisNumerico.Logica;
 using SimpleInjector;
 using System;
@@ -27,9 +28,11 @@ namespace AnalisisNumerico.UI
             // Register your types, for instance:
             container.Register<IMetodosCerrados, Logica.Unidad_1.MetodosCerrados>();
             container.Register<IMetodosAbiertos, Logica.Unidad_1.MetodosAbiertos>();
+            container.Register<IEcuaciones, Logica.Unidad_2.MetodosEcuaciones>();
             container.Register<InicioForm>();
             container.Register<FormularioMetodosCerrados>();
             container.Register<FormularioMetodosAbiertos>();
+            container.Register<FormularioGaussJordan>();
         }
     }
 }
