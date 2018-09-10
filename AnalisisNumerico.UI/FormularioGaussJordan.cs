@@ -50,16 +50,16 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            List<List<int>> Sistema = new List<List<int>>();
-            List<int> Ecuacion = new List<int>();
+            List<List<decimal>> Sistema = new List<List<decimal>>();
+            List<decimal> Ecuacion = new List<decimal>();
 
-            Sistema = new List<List<int>>();
+            Sistema = new List<List<decimal>>();
             int ecuaciones = Convert.ToInt32(txtboxNumeroEcuaciones.Text);
             int incognitas = Convert.ToInt32(txtboxNumeroIncognitas.Text);
 
             for (int i = 0; i <=ecuaciones-1; i++)
             {
-                Ecuacion = new List<int>();
+                Ecuacion = new List<decimal>();
 
                 for (int z = 0; z <= incognitas; z++)
                 {
@@ -70,7 +70,9 @@ namespace AnalisisNumerico.UI
             ParametrosEcuaciones parametros = new ParametrosEcuaciones();
             parametros.ValoresIniciales = Sistema;
 
-            MetodosEcuaciones.ResolverEcuacion(parametros);
+            ResultadoEcuaciones resultado = new ResultadoEcuaciones();
+
+            resultado=MetodosEcuaciones.ResolverEcuacion(parametros);
         }
     }
 }

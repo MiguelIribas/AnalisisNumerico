@@ -42,13 +42,11 @@ D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Entidades.dl
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.Tests.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\SimpleInjector.dll
-D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\MathParser.org-mXparser.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.Tests.pdb
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Logica.pdb
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\AnalisisNumerico.Entidades.pdb
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\SimpleInjector.xml
-D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.csprojResolveAssemblyReference.cache
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMetodosCerrados.resources
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.InicioForm.resources
@@ -59,3 +57,5 @@ E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Propertie
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Properties.Resources.resources
 D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioGaussJordan.resources
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioGaussJordan.resources
+D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

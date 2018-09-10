@@ -8,6 +8,6 @@ namespace AnalisisNumerico.Entidades.Ecuaciones
 {
     public class ParametrosEcuaciones
     {
-        public List<List<int>> ValoresIniciales { get; set; }
+        public List<List<decimal>> ValoresIniciales { get; set; }
     }
 }
