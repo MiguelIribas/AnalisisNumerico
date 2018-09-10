@@ -52,6 +52,31 @@ namespace AnalisisNumerico.UI
                 resultado = this.metodosRaices.MetodoReglaFalsa(parametros);
             }
 
+            switch (resultado.TipoResultado)
+            {
+                case TipoResultado.Raiz:
+                    resultado.Mensaje = "SE ENCONTRO LA RAIZ.";
+                    break;
+                case TipoResultado.Constante:
+                    if (parametros.TipoMetodo == TipoMetodo.Tangente)
+                    {
+                        resultado.Mensaje = "EL VALOR INGRESADO " + parametros.ValorInicial + " ES INCORRECTO. LA RECTA TANGENTE TRAZADA EN ESE PUNTO ES CONSTANTE O NO SE PUEDE EVALUAR LA FUNCION EN DICHO PUNTO.";
+                    }
+                    else
+                    {
+                        resultado.Mensaje = "LOS VALORES INGRESADOS SON INCORRECTOS. NO SE PUEDE EVALUAR LA FUNCION EN DICHOS PUNTOS O LA RECTA SECANTE TRAZADA ES CONTASTANTE O CORTA EL EJE X FUERA DEL DOMINIO DE LA FUNCION.";
+                    }
+                    break;
+                case TipoResultado.FueradeLimites:
+                    resultado.Mensaje = "ENTRE EL VALOR INICIAL Y FINAL NO EXISTE LA RAIZ";
+                    break;
+                case TipoResultado.FuncionIncorrecta:
+                    resultado.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                    break;
+                default:
+                    break;
+            }
+
             if (resultado.TipoResultado == TipoResultado.Raiz)
             {
                 labelResultado.Height = 40;

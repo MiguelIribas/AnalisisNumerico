@@ -55,7 +55,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
 
             if (double.IsNaN(fXi)|| double.IsNaN(fXd))
             {
-                res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
                 res.Raiz = null;
                 res.TipoResultado = TipoResultado.FuncionIncorrecta;
                 return res;
@@ -63,7 +62,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
           
             if (fXi * fXd == 0)
             {
-                res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = 1;
                 res.Raiz = x1;
                 res.Error = ErrorRelativo;
@@ -79,7 +77,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
 
             if ((fXi * fXd) >= 0)
             {
-                res.Mensaje = "ENTRE EL VALOR INICIAL Y FINAL NO EXISTE LA RAIZ";
                 res.Raiz = null;
                 res.TipoResultado = TipoResultado.FueradeLimites;
                 return res;
@@ -90,7 +87,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             if (fXr == 0)
             {
                 res.Raiz = Math.Round(Xr, 6);
-                res.Mensaje = "SE ENCONTRÓ LA RAIZ";
                 res.Iteraciones = contador;
                 res.TipoResultado = TipoResultado.Raiz;
                 res.Error = ErrorRelativo;
@@ -112,7 +108,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 this.AveriguarDatos(averiguarXr, x1, x2, fXi, fXd, nombre, funcion);
             }
             res.Raiz = Math.Round(Xr, 6);
-            res.Mensaje = "SE ENCONTRÓ LA RAIZ";
             res.Iteraciones = contador;
             res.TipoResultado = TipoResultado.Raiz;
             res.Error = ErrorRelativo;

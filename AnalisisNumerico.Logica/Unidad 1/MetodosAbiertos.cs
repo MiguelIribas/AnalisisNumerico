@@ -66,8 +66,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 fxii = EvaluarExpresion(nombre, funcion, xii);
                 if (fxi == 0)
                 {
-                    res.Raiz = x1;
-                    res.Mensaje = "SE ENCONTRO LA RAIZ.";
+                    res.Raiz = x1;                   
                     res.Error = ErrorRelativo;
                     res.Iteraciones = 1;
                     res.TipoResultado = TipoResultado.Raiz;
@@ -76,8 +75,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 dfx = ((fxii - fxi) / parametros.Tolerancia);
 
                 if (double.IsNaN(fxi) || double.IsNaN(fxii))
-                {
-                    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
+                {                    
                     res.Raiz = null;
                     res.TipoResultado = TipoResultado.FuncionIncorrecta;
                     return res;
@@ -91,7 +89,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 fxd = EvaluarExpresion(nombre, funcion, xd);
                 if (fxi * fxd == 0)
                 {
-                    res.Mensaje = "SE ENCONTRO LA RAIZ.";
                     res.Iteraciones = 1;
                     res.TipoResultado = TipoResultado.Raiz;
                     res.Raiz = x1;
@@ -104,7 +101,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
                 }
                 if (double.IsNaN(fxi) || double.IsNaN(fxd))
                 {
-                    res.Mensaje = "LA FUNCIÓN INGRESADA ES INCORRECTA";
                     res.Raiz = null;
                     res.TipoResultado = TipoResultado.FuncionIncorrecta;
                     return res;
@@ -114,7 +110,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             if (Math.Round(fXr, 2) == 0)
             {
                 res.Raiz = Math.Round(Xr, 6);
-                res.Mensaje = "SE ENCONTRO LA RAIZ.";
                 res.Iteraciones = contador;
                 res.TipoResultado = TipoResultado.Raiz;
                 res.Error = ErrorRelativo;
@@ -141,16 +136,7 @@ namespace AnalisisNumerico.Logica.Unidad_1
             }
 
             if (contador == parametros.Iteraciones && double.IsNaN(ErrorRelativo) && double.IsNaN(Xr))
-            {
-                if (parametros.TipoMetodo==TipoMetodo.Tangente)
-                {
-                    
-                    res.Mensaje = "EL VALOR INGRESADO "+ parametros.ValorInicial+ " ES INCORRECTO. LA RECTA TANGENTE TRAZADA EN ESE PUNTO ES CONSTANTE O NO SE PUEDE EVALUAR LA FUNCION EN DICHO PUNTO.";
-                }
-                else
-                {
-                    res.Mensaje = "LOS VALORES INGRESADOS SON INCORRECTOS. NO SE PUEDE EVALUAR LA FUNCION EN DICHOS PUNTOS O LA RECTA SECANTE TRAZADA ES CONTASTANTE O CORTA EL EJE X FUERA DEL DOMINIO DE LA FUNCION.";
-                }               
+            {             
                 res.Raiz = null;
                 res.Error = null;
                 res.TipoResultado = TipoResultado.Constante;
@@ -159,7 +145,6 @@ namespace AnalisisNumerico.Logica.Unidad_1
             else
             {
                 res.Raiz = Math.Round(Xr, 6);
-                res.Mensaje = "SE ENCONTRO LA RAIZ.";
                 res.TipoResultado = TipoResultado.Raiz;
                 res.Iteraciones = contador;
                 res.Error = ErrorRelativo;
