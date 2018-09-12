@@ -11,31 +11,29 @@ namespace AnalisisNumerico.Logica.Unidad_2
 {
     public class MetodosEcuaciones : IEcuaciones
     {
-        public List<List<decimal>> ListaResultante { get; set; }
         public List<List<decimal>> ListaOriginal { get; set; }
-        public List<decimal> ListaNormalizada { get; set; }
+        public List<decimal> FilaNormalizada { get; set; }
         public int Contador { get; set; }
 
         public MetodosEcuaciones()
         {
-            this.ListaResultante = new List<List<decimal>>();
+            this.ListaOriginal = new List<List<decimal>>();
             this.Contador = 0;
-            this.ListaNormalizada = new List<decimal>();
+            this.FilaNormalizada = new List<decimal>();
         }
 
         public ResultadoEcuaciones ResolverEcuacion(ParametrosEcuaciones parametros)
         {
             this.ListaOriginal = parametros.ValoresIniciales;
 
-            for (int i = 0; i < parametros.ValoresIniciales.Count - 1; i++)
+            for (int i = 0; i <= parametros.ValoresIniciales.Count-1; i++)
             {
                 this.Contador += 1;
                 this.Ordenar();
                 this.Normalizar();
-                this.FilasNuevas();
-
+                this.Bloque(i);
             }
-            return new ResultadoEcuaciones();
+            return AveriguarIncognitas();
         }
 
         public void Ordenar()
@@ -61,43 +59,56 @@ namespace AnalisisNumerico.Logica.Unidad_2
 
         public void Normalizar()
         {
-            this.ListaNormalizada = ListaOriginal[Contador - 1];
+            this.FilaNormalizada = ListaOriginal[Contador - 1];
             decimal valor = ListaOriginal[Contador - 1][Contador - 1];
 
-            for (int i = 0; i < ListaNormalizada.Count; i++)
+            for (int i = 0; i < FilaNormalizada.Count; i++)
             {
-                ListaNormalizada[i] = ListaNormalizada[i] / valor;
+                FilaNormalizada[i] = FilaNormalizada[i] / valor;
             }
-          
-            ListaOriginal[Contador - 1] = ListaNormalizada;
+
+            ListaOriginal[Contador - 1] = FilaNormalizada;
         }
 
-        public void FilasNuevas()
+        public void Bloque(int columna) 
         {
-            for (int i = 0; i < ListaOriginal.Count; i++)
+            for (int i = 0; i <= ListaOriginal.Count-1; i++)
             {
-                if (i!=Contador-1)
+                if (ListaOriginal[i]!=FilaNormalizada && ListaOriginal[i][columna]!=0)
                 {
-                    List<decimal> FilaAnterior = ListaOriginal[i];
-
-                    var ValorFilaAnterior = FilaAnterior[0];
-
-                    List<decimal> FilaNormalizada = new List<decimal>();
-
-                    for (int z = 0; z < ListaNormalizada.Count; z++)
-                    {
-                        FilaNormalizada.Add(ListaNormalizada[z] * ValorFilaAnterior);
-                    }
-
-                    List<decimal> FilaNueva = new List<decimal>();
-                    for (int x = 0; x < FilaNormalizada.Count; x++)
-                    {
-                        FilaNueva.Add(FilaAnterior[x] - FilaNormalizada[x]);
-                    }
-                    ListaOriginal[i] = FilaNueva;
-
+                    this.FilasNuevas(ListaOriginal[i], i, columna);
                 }
             }
+        }
+
+        public void FilasNuevas(List<decimal> FilaAnterior, int fila, int columna)
+        {
+            List<decimal> FilaNueva = new List<decimal>();
+ 
+            for (int i = 0; i < FilaAnterior.Count; i++)
+            {
+                FilaNueva.Add(FilaAnterior[i]-( FilaNormalizada[i] * FilaAnterior[columna] ));
+            }
+            ListaOriginal[fila] = FilaNueva;      
+        }
+
+        public ResultadoEcuaciones AveriguarIncognitas()
+        {
+            List<decimal> ValoresIncognitas = new List<decimal>();
+
+            int Incognitas = ListaOriginal[0].Count-1;
+
+            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            {
+                ValoresIncognitas.Add(ListaOriginal[i][Incognitas]);
+            }
+
+            ResultadoEcuaciones resultado = new ResultadoEcuaciones();
+            resultado.ResultadosEcuaciones = ValoresIncognitas;
+            resultado.TipoResultado = TipoResultado.Ecuacion;
+            this.Contador = 0;
+
+            return resultado;
         }
 
     }

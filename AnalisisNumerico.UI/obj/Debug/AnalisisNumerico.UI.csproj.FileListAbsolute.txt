@@ -59,3 +59,5 @@ D:\Analisis Numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.Formulari
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioGaussJordan.resources
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
