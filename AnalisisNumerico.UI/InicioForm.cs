@@ -41,11 +41,11 @@ namespace AnalisisNumerico.UI
             FormularioMetodosAbiertos.ShowDialog();
         }
 
-        private void gAUSSJORDANToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sISTEMADEECUACIONESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormularioGaussJordan FormularioGaussJordan = Program.container.GetInstance<FormularioGaussJordan>();
-            FormularioGaussJordan.Owner = this;
-            FormularioGaussJordan.ShowDialog();
+            FormularioSistemasEcuaciones FormularioSistemasEcuaciones = Program.container.GetInstance<FormularioSistemasEcuaciones>();
+            FormularioSistemasEcuaciones.Owner = this;
+            FormularioSistemasEcuaciones.ShowDialog();
         }
     }
 }

@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormularioGaussJordan.cs">
+    <Compile Include="Unidad 2\FormularioSistemasEcuaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioGaussJordan.Designer.cs">
-      <DependentUpon>FormularioGaussJordan.cs</DependentUpon>
+    <Compile Include="Unidad 2\FormularioSistemasEcuaciones.Designer.cs">
+      <DependentUpon>FormularioSistemasEcuaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Unidad 1\FormularioMetodosAbiertos.cs">
       <SubType>Form</SubType>
@@ -85,8 +85,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormularioGaussJordan.resx">
-      <DependentUpon>FormularioGaussJordan.cs</DependentUpon>
+    <EmbeddedResource Include="Unidad 2\FormularioSistemasEcuaciones.resx">
+      <DependentUpon>FormularioSistemasEcuaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad 1\FormularioMetodosAbiertos.resx">
       <DependentUpon>FormularioMetodosAbiertos.cs</DependentUpon>
@@ -116,9 +116,7 @@
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unidad 2\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

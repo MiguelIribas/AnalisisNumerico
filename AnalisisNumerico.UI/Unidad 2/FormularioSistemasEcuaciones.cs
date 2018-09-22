@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace AnalisisNumerico.UI
 {
-    public partial class FormularioGaussJordan : Form
+    public partial class FormularioSistemasEcuaciones : Form
     {
         private readonly IEcuaciones MetodosEcuaciones;
 
-        public FormularioGaussJordan(IEcuaciones metodosecuaciones)
+        public FormularioSistemasEcuaciones(IEcuaciones metodosecuaciones)
         {
             InitializeComponent();
             this.MetodosEcuaciones = metodosecuaciones;
@@ -54,6 +54,12 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            if (!(txtboxIteraciones.Text != "" && txtboxNumeroEcuaciones.Text != "" && txtboxNumeroIncognitas.Text != "" && txtboxTolerancia.Text != ""))
+            {
+                MessageBox.Show("No se colocaron correctamente los parametros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             this.btnCalcular.Enabled = false;
             List<List<decimal>> Sistema = new List<List<decimal>>();
             List<decimal> Ecuacion = new List<decimal>();
@@ -72,11 +78,27 @@ namespace AnalisisNumerico.UI
                 }
                 Sistema.Add(Ecuacion);
             }
-            ParametrosEcuaciones parametros = new ParametrosEcuaciones();
-            parametros.ValoresIniciales = Sistema;
 
+
+            //revisar
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
-            resultado = MetodosEcuaciones.ResolverEcuacion(parametros);
+
+            if (comboMetodo.Text=="GAUSS-JORDAN")
+            {
+                ParametrosEcuaciones parametros = new ParametrosEcuaciones();
+                parametros.ValoresIniciales = Sistema;
+                 
+                resultado = MetodosEcuaciones.ResolverEcuacionGaussJordan(parametros);
+            }
+            else
+            {
+                ParametrosGaussSeidel parametros = new ParametrosGaussSeidel();
+                parametros.ValoresIniciales = Sistema;
+                parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
+                parametros.Tolerancia=Convert.ToDecimal(txtboxTolerancia.Text);
+                resultado = MetodosEcuaciones.ResolverEcuacionGaussSeidel(parametros);
+            }
+            
 
             if (resultado.TipoResultado==TipoResultado.Ecuacion)
             {
@@ -121,6 +143,39 @@ namespace AnalisisNumerico.UI
 
             this.txtboxNumeroEcuaciones.Text = "";
             this.txtboxNumeroIncognitas.Text = "";
+            this.txtboxTolerancia.Text = "";
+            this.txtboxIteraciones.Text = "";
+        }
+
+        private void comboMetodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboMetodo.Text == "GAUSS-JORDAN")
+            {
+                labelGaussJordan.Visible = true;
+                labelGaussSeidel.Visible = false;         
+                labelIteraciones.Visible = false;
+                txtboxIteraciones.Visible = false;
+                labelTolerancia.Visible = false;
+                txtboxTolerancia.Visible = false;
+            }
+            else
+            {
+                labelGaussJordan.Visible = false;
+                labelGaussSeidel.Visible = true;
+                labelIteraciones.Visible = true;
+                txtboxIteraciones.Visible = true;
+                labelTolerancia.Visible = true;
+                txtboxTolerancia.Visible = true;
+            }
+        }
+
+        private void FormularioGaussJordan_Load(object sender, EventArgs e)
+        {
+            List<string> NombresMetodos = new List<string>();
+            NombresMetodos.Add("GAUSS-JORDAN");
+            NombresMetodos.Add("GAUSS-SEIDEL");
+
+            comboMetodo.DataSource = NombresMetodos;
         }
     }
 }

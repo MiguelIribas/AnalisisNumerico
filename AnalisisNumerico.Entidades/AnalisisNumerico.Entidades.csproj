@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Ecuaciones\IEcuaciones.cs" />
     <Compile Include="Ecuaciones\ParametrosEcuaciones.cs" />
+    <Compile Include="Ecuaciones\ParametrosGaussSeidel.cs" />
     <Compile Include="Ecuaciones\ResultadoEcuaciones.cs" />
     <Compile Include="Raices\IMetodosAbiertos.cs" />
     <Compile Include="Raices\IMetodosCerrados.cs" />

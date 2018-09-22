@@ -91,19 +91,12 @@
             this.sISTEMADEECUACIONESToolStripMenuItem.Name = "sISTEMADEECUACIONESToolStripMenuItem";
             this.sISTEMADEECUACIONESToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.sISTEMADEECUACIONESToolStripMenuItem.Text = "SISTEMA DE ECUACIONES";
-            // 
-            // gAUSSJORDANToolStripMenuItem
-            // 
-            this.gAUSSJORDANToolStripMenuItem.Name = "gAUSSJORDANToolStripMenuItem";
-            this.gAUSSJORDANToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.gAUSSJORDANToolStripMenuItem.Text = "GAUSS-JORDAN";
-            this.gAUSSJORDANToolStripMenuItem.Click += new System.EventHandler(this.gAUSSJORDANToolStripMenuItem_Click);
+            this.sISTEMADEECUACIONESToolStripMenuItem.Click += new System.EventHandler(this.sISTEMADEECUACIONESToolStripMenuItem_Click);
             // 
             // gAUSSSEDELToolStripMenuItem
             // 
             this.gAUSSSEDELToolStripMenuItem.Name = "gAUSSSEDELToolStripMenuItem";
             this.gAUSSSEDELToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.gAUSSSEDELToolStripMenuItem.Text = "GAUSS-SEDEL";
             // 
             // aJUSTEDECURVASToolStripMenuItem
             // 

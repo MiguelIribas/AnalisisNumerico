@@ -188,5 +188,10 @@ namespace AnalisisNumerico.UI
             txtboxLimiteMinimo.Text = "";
             txtboxTolerancia.Text = "";
         }
+
+        private void Metodo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

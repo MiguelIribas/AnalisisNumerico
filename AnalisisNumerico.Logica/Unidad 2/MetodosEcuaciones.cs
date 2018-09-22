@@ -14,19 +14,26 @@ namespace AnalisisNumerico.Logica.Unidad_2
         public List<List<decimal>> ListaOriginal { get; set; }
         public List<decimal> FilaNormalizada { get; set; }
         public int Contador { get; set; }
+        public List<List<decimal>> IncognitasDespejadas { get; set; }
+        public List<decimal> Solucion { get; set; }
+        public List<decimal> SolucionAnterior { get; set; }
 
         public MetodosEcuaciones()
         {
             this.ListaOriginal = new List<List<decimal>>();
             this.Contador = 0;
             this.FilaNormalizada = new List<decimal>();
+            this.IncognitasDespejadas = new List<List<decimal>>();
+            this.Solucion = new List<decimal>();
+            this.SolucionAnterior = new List<decimal>();
         }
 
-        public ResultadoEcuaciones ResolverEcuacion(ParametrosEcuaciones parametros)
+        //GAUSS-JORDAN
+        public ResultadoEcuaciones ResolverEcuacionGaussJordan(ParametrosEcuaciones parametros)
         {
             this.ListaOriginal = parametros.ValoresIniciales;
 
-            for (int i = 0; i <= parametros.ValoresIniciales.Count-1; i++)
+            for (int i = 0; i <= parametros.ValoresIniciales.Count - 1; i++)
             {
                 this.Contador += 1;
                 this.Ordenar();
@@ -70,11 +77,11 @@ namespace AnalisisNumerico.Logica.Unidad_2
             ListaOriginal[Contador - 1] = FilaNormalizada;
         }
 
-        public void Bloque(int columna) 
+        public void Bloque(int columna)
         {
-            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
-                if (ListaOriginal[i]!=FilaNormalizada && ListaOriginal[i][columna]!=0)
+                if (ListaOriginal[i] != FilaNormalizada && ListaOriginal[i][columna] != 0)
                 {
                     this.FilasNuevas(ListaOriginal[i], i, columna);
                 }
@@ -84,21 +91,21 @@ namespace AnalisisNumerico.Logica.Unidad_2
         public void FilasNuevas(List<decimal> FilaAnterior, int fila, int columna)
         {
             List<decimal> FilaNueva = new List<decimal>();
- 
+
             for (int i = 0; i < FilaAnterior.Count; i++)
             {
-                FilaNueva.Add(FilaAnterior[i]-( FilaNormalizada[i] * FilaAnterior[columna] ));
+                FilaNueva.Add(FilaAnterior[i] - (FilaNormalizada[i] * FilaAnterior[columna]));
             }
-            ListaOriginal[fila] = FilaNueva;      
+            ListaOriginal[fila] = FilaNueva;
         }
 
         public ResultadoEcuaciones AveriguarIncognitas()
         {
             List<decimal> ValoresIncognitas = new List<decimal>();
 
-            int Incognitas = ListaOriginal[0].Count-1;
+            int Incognitas = ListaOriginal[0].Count - 1;
 
-            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
                 ValoresIncognitas.Add(ListaOriginal[i][Incognitas]);
             }
@@ -111,5 +118,84 @@ namespace AnalisisNumerico.Logica.Unidad_2
             return resultado;
         }
 
+        //GAUSS-SEIDEL
+        public ResultadoEcuaciones ResolverEcuacionGaussSeidel(ParametrosGaussSeidel parametros)
+        {
+            this.ListaOriginal = parametros.ValoresIniciales;
+            this.DespejarIncognitas();
+            this.InicializarSolucion();
+
+            while (!( SolucionAnterior==Solucion || (Contador >= parametros.Iteraciones)))
+            {
+                this.AveriguarSolucion();
+                this.Contador += 1;
+            }
+
+            ResultadoEcuaciones resultado = new ResultadoEcuaciones();
+
+            resultado.ResultadosEcuaciones = Solucion;
+            resultado.TipoResultado = TipoResultado.Ecuacion;
+
+            return resultado;
+        }
+
+        public void DiagonalmenteDominante()
+        {
+            //Verificar si esta bien y devolver un resultado.
+        }
+
+        public void DespejarIncognitas()
+        {
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
+            {
+                List<decimal> Ecuacion = new List<decimal>();
+                decimal valor = ListaOriginal[i][i];
+
+                for (int x = 0; x <= ListaOriginal[i].Count-1; x++)
+                {                    
+                    if (x == i)
+                    {
+                        Ecuacion.Add(0);
+                    }
+                    else
+                    {
+                        if (x == ListaOriginal[i].Count - 1)
+                        {
+                            Ecuacion.Add(ListaOriginal[i][x] / valor);
+                        }
+                        else
+                        {
+                            Ecuacion.Add((ListaOriginal[i][x] / valor) * -1);
+                        }
+                    }
+                }
+                IncognitasDespejadas.Add(Ecuacion);
+            }
+        }
+
+        public void AveriguarSolucion()
+        {
+            this.SolucionAnterior = new List<decimal>(Solucion);
+
+            for (int filas = 0; filas <= IncognitasDespejadas.Count-1; filas++)
+            {
+                decimal total = 0;
+                for (int columnas = 0; columnas <= IncognitasDespejadas[filas].Count-2; columnas++)
+                {
+                    decimal resultado = IncognitasDespejadas[filas][columnas]*Solucion[columnas];
+                    total += resultado;
+                }
+                total += IncognitasDespejadas[filas][IncognitasDespejadas.Count];
+                this.Solucion[filas] = total;          
+            }
+        }
+
+        public void InicializarSolucion()
+        {
+            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            {
+                this.Solucion.Add(0);
+            }
+        }
     }
 }

@@ -155,6 +155,7 @@
             this.Metodo.Size = new System.Drawing.Size(77, 18);
             this.Metodo.TabIndex = 38;
             this.Metodo.Text = "METODO";
+            this.Metodo.Click += new System.EventHandler(this.Metodo_Click);
             // 
             // comboMetodo
             // 

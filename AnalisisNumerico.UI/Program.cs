@@ -32,7 +32,7 @@ namespace AnalisisNumerico.UI
             container.Register<InicioForm>();
             container.Register<FormularioMetodosCerrados>();
             container.Register<FormularioMetodosAbiertos>();
-            container.Register<FormularioGaussJordan>();
+            container.Register<FormularioSistemasEcuaciones>();
         }
     }
 }

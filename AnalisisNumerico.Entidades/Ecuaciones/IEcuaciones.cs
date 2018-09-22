@@ -8,6 +8,8 @@ namespace AnalisisNumerico.Entidades.Ecuaciones
 {
     public interface IEcuaciones
     {
-        ResultadoEcuaciones ResolverEcuacion(ParametrosEcuaciones parametros);
+        ResultadoEcuaciones ResolverEcuacionGaussJordan(ParametrosEcuaciones parametros);
+
+        ResultadoEcuaciones ResolverEcuacionGaussSeidel(ParametrosGaussSeidel parametros);
     }
 }
