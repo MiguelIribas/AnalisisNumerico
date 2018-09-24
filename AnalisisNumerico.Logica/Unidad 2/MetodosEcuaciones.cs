@@ -107,7 +107,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
 
             for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
-                ValoresIncognitas.Add(ListaOriginal[i][Incognitas]);
+                ValoresIncognitas.Add(Math.Round(ListaOriginal[i][Incognitas],4));
             }
 
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
@@ -186,7 +186,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
                     total += resultado;
                 }
                 total += IncognitasDespejadas[filas][IncognitasDespejadas.Count];
-                this.Solucion[filas] = total;          
+                this.Solucion[filas] = Math.Round(total,4);          
             }
         }
 

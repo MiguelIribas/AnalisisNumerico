@@ -54,7 +54,7 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (!(txtboxIteraciones.Text != "" && txtboxNumeroEcuaciones.Text != "" && txtboxNumeroIncognitas.Text != "" && txtboxTolerancia.Text != ""))
+            if (comboMetodo.Text=="GAUSS-SEIDEL" && !(txtboxIteraciones.Text != "" && txtboxTolerancia.Text != ""))
             {
                 MessageBox.Show("No se colocaron correctamente los parametros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
