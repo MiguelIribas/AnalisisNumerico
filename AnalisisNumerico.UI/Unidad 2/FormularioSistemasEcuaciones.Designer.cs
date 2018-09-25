@@ -73,24 +73,29 @@
             // 
             // txtboxNumeroIncognitas
             // 
+            this.txtboxNumeroIncognitas.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxNumeroIncognitas.Location = new System.Drawing.Point(351, 95);
             this.txtboxNumeroIncognitas.Name = "txtboxNumeroIncognitas";
-            this.txtboxNumeroIncognitas.Size = new System.Drawing.Size(100, 20);
+            this.txtboxNumeroIncognitas.Size = new System.Drawing.Size(100, 26);
             this.txtboxNumeroIncognitas.TabIndex = 41;
             // 
             // txtboxNumeroEcuaciones
             // 
+            this.txtboxNumeroEcuaciones.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxNumeroEcuaciones.Location = new System.Drawing.Point(351, 127);
             this.txtboxNumeroEcuaciones.Name = "txtboxNumeroEcuaciones";
-            this.txtboxNumeroEcuaciones.Size = new System.Drawing.Size(100, 20);
+            this.txtboxNumeroEcuaciones.Size = new System.Drawing.Size(100, 26);
             this.txtboxNumeroEcuaciones.TabIndex = 42;
             // 
             // Grilla
             // 
+            this.Grilla.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.Grilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grilla.Location = new System.Drawing.Point(78, 232);
             this.Grilla.Name = "Grilla";
-            this.Grilla.Size = new System.Drawing.Size(535, 147);
+            this.Grilla.Size = new System.Drawing.Size(550, 150);
             this.Grilla.TabIndex = 43;
             // 
             // btnAplicar
@@ -127,20 +132,23 @@
             // 
             // GrillaResultado
             // 
+            this.GrillaResultado.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GrillaResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GrillaResultado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.GrillaResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaResultado.Location = new System.Drawing.Point(78, 472);
+            this.GrillaResultado.Location = new System.Drawing.Point(172, 478);
             this.GrillaResultado.Name = "GrillaResultado";
-            this.GrillaResultado.Size = new System.Drawing.Size(535, 61);
+            this.GrillaResultado.Size = new System.Drawing.Size(535, 81);
             this.GrillaResultado.TabIndex = 48;
             // 
             // Resultado
             // 
             this.Resultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Resultado.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Resultado.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.Resultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Resultado.Location = new System.Drawing.Point(36, 413);
+            this.Resultado.Location = new System.Drawing.Point(74, 411);
             this.Resultado.Name = "Resultado";
-            this.Resultado.Size = new System.Drawing.Size(651, 40);
+            this.Resultado.Size = new System.Drawing.Size(712, 40);
             this.Resultado.TabIndex = 49;
             this.Resultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -159,7 +167,7 @@
             // 
             this.Metodo.AutoSize = true;
             this.Metodo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Metodo.Location = new System.Drawing.Point(20, 6);
+            this.Metodo.Location = new System.Drawing.Point(37, 10);
             this.Metodo.Name = "Metodo";
             this.Metodo.Size = new System.Drawing.Size(77, 18);
             this.Metodo.TabIndex = 52;
@@ -167,25 +175,28 @@
             // 
             // comboMetodo
             // 
+            this.comboMetodo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMetodo.FormattingEnabled = true;
             this.comboMetodo.Location = new System.Drawing.Point(133, 6);
             this.comboMetodo.Name = "comboMetodo";
-            this.comboMetodo.Size = new System.Drawing.Size(198, 21);
+            this.comboMetodo.Size = new System.Drawing.Size(198, 28);
             this.comboMetodo.TabIndex = 51;
             this.comboMetodo.SelectedIndexChanged += new System.EventHandler(this.comboMetodo_SelectedIndexChanged);
             // 
             // txtboxIteraciones
             // 
+            this.txtboxIteraciones.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxIteraciones.Location = new System.Drawing.Point(351, 193);
             this.txtboxIteraciones.Name = "txtboxIteraciones";
-            this.txtboxIteraciones.Size = new System.Drawing.Size(100, 20);
+            this.txtboxIteraciones.Size = new System.Drawing.Size(100, 26);
             this.txtboxIteraciones.TabIndex = 70;
             // 
             // txtboxTolerancia
             // 
+            this.txtboxTolerancia.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxTolerancia.Location = new System.Drawing.Point(351, 162);
             this.txtboxTolerancia.Name = "txtboxTolerancia";
-            this.txtboxTolerancia.Size = new System.Drawing.Size(100, 20);
+            this.txtboxTolerancia.Size = new System.Drawing.Size(100, 26);
             this.txtboxTolerancia.TabIndex = 69;
             // 
             // labelIteraciones
@@ -243,7 +254,7 @@
             this.Controls.Add(this.NumeroIncognitas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioSistemasEcuaciones";
-            this.Text = "FormularioGaussJordan";
+            this.Text = "SISTEMAS DE ECUACIONES";
             this.Load += new System.EventHandler(this.FormularioGaussJordan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaResultado)).EndInit();

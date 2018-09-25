@@ -182,6 +182,11 @@ namespace AnalisisNumerico.UI
             NombresMetodos.Add("GAUSS-SEIDEL");
 
             comboMetodo.DataSource = NombresMetodos;
+
+            this.Grilla.DefaultCellStyle.Font = new Font("Arial", 12);
+            this.GrillaResultado.DefaultCellStyle.Font = new Font("Arial", 12);
+            this.Grilla.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GrillaResultado.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }
