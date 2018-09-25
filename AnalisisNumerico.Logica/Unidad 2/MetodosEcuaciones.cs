@@ -134,7 +134,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
             {
                 this.DespejarIncognitas();
                 this.InicializarSolucion();
-                bool soluciones = true;
+                bool soluciones = false;
 
                 while (!(soluciones == true || (Contador >= parametros.Iteraciones)))
                 {
@@ -150,14 +150,18 @@ namespace AnalisisNumerico.Logica.Unidad_2
 
         public bool CompararSoluciones(decimal tolerancia)
         {
-            bool Ok = true; //True --> Error relativo menor a tolerancia
-
+            bool Ok = false; //True --> Error relativo menor a tolerancia
+            int contador = 0;
             for (int i = 0; i <= Solucion.Count - 1; i++)
             {
-                if (((Solucion[i] - SolucionAnterior[i]) / Solucion[i]) > tolerancia)
+                if (((Solucion[i] - SolucionAnterior[i]) / Solucion[i]) <= tolerancia)
                 {
-                    Ok = false;
+                    contador += 1;
                 }
+            }
+            if (contador==Solucion.Count)
+            {
+                Ok = true;
             }
             return Ok;
         }
@@ -170,11 +174,11 @@ namespace AnalisisNumerico.Logica.Unidad_2
             {
                 decimal suma = 0;
 
-                for (int x = 0; x <= ListaOriginal[i].Count - 1; x++)
+                for (int x = 0; x <= ListaOriginal[i].Count - 2; x++)
                 {
                     if (x != i)
                     {
-                        suma += ListaOriginal[i][x];
+                        suma += Math.Abs(ListaOriginal[i][x]);
                     }
                 }
 

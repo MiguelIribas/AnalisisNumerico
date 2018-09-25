@@ -50,5 +50,27 @@ namespace AnalisisNumerico.Logica.Tests
 
             List<decimal> resultados = new List<decimal>();
         }
+
+        [TestMethod]
+        public void Ejercicio3()
+        {
+            ParametrosGaussSeidel parametros = new ParametrosGaussSeidel();
+
+            List<decimal> Ecuacion1 = new List<decimal>() { -8.301525M, -0.25M, 1.010075M, 20.225M };
+            List<decimal> Ecuacion2 = new List<decimal>() { 3.751125M, -10.801216M, -3.002028M, 10.75M };
+            List<decimal> Ecuacion3 = new List<decimal>() { 5M, 1M, -12.01015M, 8M };
+
+            List<List<decimal>> Sistema = new List<List<decimal>>() { Ecuacion1, Ecuacion2, Ecuacion3 };
+
+            parametros.Iteraciones = 100;
+            parametros.Tolerancia = 0.0001M;
+            parametros.ValoresIniciales = Sistema;
+
+            MetodosEcuaciones metodos = new MetodosEcuaciones();
+            metodos.ResolverEcuacionGaussSeidel(parametros);
+
+            List<decimal> resultados = new List<decimal>();
+
+        }
     }
 }
