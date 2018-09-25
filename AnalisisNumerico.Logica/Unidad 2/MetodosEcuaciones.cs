@@ -123,6 +123,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
         {
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
             this.ListaOriginal = parametros.ValoresIniciales;
+            this.AcomodarFilas();
             bool DD = this.DiagonalmenteDominante();
 
             if (DD == false)
@@ -245,6 +246,31 @@ namespace AnalisisNumerico.Logica.Unidad_2
             }
         }
 
+        public void AcomodarFilas()
+        {
+            List<List<decimal>> resultado = new List<List<decimal>>();
+            List<List<decimal>> original = new List<List<decimal>>(ListaOriginal);
+
+            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            {
+                decimal mayor = ListaOriginal[i][i];
+                int fila = i;
+
+                for (int x = 0; x < ListaOriginal[i].Count-1; x++)
+                {
+                    if (x!=i)
+                    {
+                        if (Math.Abs(ListaOriginal[x][i])>=mayor)
+                        {
+                            mayor = Math.Abs(ListaOriginal[x][i]);
+                            fila = x;
+                        }
+                    }
+                }
+                resultado.Add(original[fila]);              
+            }
+            this.ListaOriginal = new List<List<decimal>>(resultado);
+        }
 
     }
 }
