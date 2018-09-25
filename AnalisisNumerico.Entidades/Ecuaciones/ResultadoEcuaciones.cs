@@ -12,6 +12,6 @@ namespace AnalisisNumerico.Entidades.Ecuaciones
 
     public enum TipoResultado
     {
-        Ecuacion
+        Ecuacion,NoDD
     }
 }

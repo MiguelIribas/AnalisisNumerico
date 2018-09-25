@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioSistemasEcuaciones));
             this.NumeroIncognitas = new System.Windows.Forms.Label();
             this.NumeroEcuaciones = new System.Windows.Forms.Label();
             this.txtboxNumeroIncognitas = new System.Windows.Forms.TextBox();
@@ -89,7 +90,7 @@
             this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grilla.Location = new System.Drawing.Point(78, 232);
             this.Grilla.Name = "Grilla";
-            this.Grilla.Size = new System.Drawing.Size(557, 147);
+            this.Grilla.Size = new System.Drawing.Size(535, 147);
             this.Grilla.TabIndex = 43;
             // 
             // btnAplicar
@@ -97,7 +98,7 @@
             this.btnAplicar.Font = new System.Drawing.Font("Arial", 15.75F);
             this.btnAplicar.Location = new System.Drawing.Point(468, 95);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(128, 54);
+            this.btnAplicar.Size = new System.Drawing.Size(152, 54);
             this.btnAplicar.TabIndex = 44;
             this.btnAplicar.Text = "APLICAR";
             this.btnAplicar.UseVisualStyleBackColor = true;
@@ -116,7 +117,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnCalcular.Location = new System.Drawing.Point(641, 271);
+            this.btnCalcular.Location = new System.Drawing.Point(634, 263);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(152, 62);
             this.btnCalcular.TabIndex = 47;
@@ -127,9 +128,9 @@
             // GrillaResultado
             // 
             this.GrillaResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaResultado.Location = new System.Drawing.Point(100, 469);
+            this.GrillaResultado.Location = new System.Drawing.Point(78, 472);
             this.GrillaResultado.Name = "GrillaResultado";
-            this.GrillaResultado.Size = new System.Drawing.Size(525, 61);
+            this.GrillaResultado.Size = new System.Drawing.Size(535, 61);
             this.GrillaResultado.TabIndex = 48;
             // 
             // Resultado
@@ -240,6 +241,7 @@
             this.Controls.Add(this.txtboxNumeroIncognitas);
             this.Controls.Add(this.NumeroEcuaciones);
             this.Controls.Add(this.NumeroIncognitas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioSistemasEcuaciones";
             this.Text = "FormularioGaussJordan";
             this.Load += new System.EventHandler(this.FormularioGaussJordan_Load);

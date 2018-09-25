@@ -34,8 +34,6 @@
             this.mETODOSCERRADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mETODOSABIERTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sISTEMADEECUACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gAUSSJORDANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gAUSSSEDELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUSTEDECURVASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pOLINOMIOSDELAGRANGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,18 +83,10 @@
             // 
             // sISTEMADEECUACIONESToolStripMenuItem
             // 
-            this.sISTEMADEECUACIONESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gAUSSJORDANToolStripMenuItem,
-            this.gAUSSSEDELToolStripMenuItem});
             this.sISTEMADEECUACIONESToolStripMenuItem.Name = "sISTEMADEECUACIONESToolStripMenuItem";
             this.sISTEMADEECUACIONESToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.sISTEMADEECUACIONESToolStripMenuItem.Text = "SISTEMA DE ECUACIONES";
             this.sISTEMADEECUACIONESToolStripMenuItem.Click += new System.EventHandler(this.sISTEMADEECUACIONESToolStripMenuItem_Click);
-            // 
-            // gAUSSSEDELToolStripMenuItem
-            // 
-            this.gAUSSSEDELToolStripMenuItem.Name = "gAUSSSEDELToolStripMenuItem";
-            this.gAUSSSEDELToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             // 
             // aJUSTEDECURVASToolStripMenuItem
             // 
@@ -174,8 +164,6 @@
         private System.Windows.Forms.ToolStripMenuItem mETODOSCERRADOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSABIERTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sISTEMADEECUACIONESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gAUSSJORDANToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gAUSSSEDELToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aJUSTEDECURVASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pOLINOMIOSDELAGRANGEToolStripMenuItem;

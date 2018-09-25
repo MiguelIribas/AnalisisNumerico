@@ -107,7 +107,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
 
             for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
-                ValoresIncognitas.Add(Math.Round(ListaOriginal[i][Incognitas],4));
+                ValoresIncognitas.Add(Math.Round(ListaOriginal[i][Incognitas], 4));
             }
 
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
@@ -121,27 +121,69 @@ namespace AnalisisNumerico.Logica.Unidad_2
         //GAUSS-SEIDEL
         public ResultadoEcuaciones ResolverEcuacionGaussSeidel(ParametrosGaussSeidel parametros)
         {
-            this.ListaOriginal = parametros.ValoresIniciales;
-            this.DespejarIncognitas();
-            this.InicializarSolucion();
-
-            while (!( SolucionAnterior==Solucion || (Contador >= parametros.Iteraciones)))
-            {
-                this.AveriguarSolucion();
-                this.Contador += 1;
-            }
-
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
+            this.ListaOriginal = parametros.ValoresIniciales;
+            bool DD = this.DiagonalmenteDominante();
 
-            resultado.ResultadosEcuaciones = Solucion;
-            resultado.TipoResultado = TipoResultado.Ecuacion;
+            if (DD == false)
+            {
+                resultado.TipoResultado = TipoResultado.NoDD;
+                resultado.ResultadosEcuaciones = new List<decimal>();
+            }
+            else
+            {
+                this.DespejarIncognitas();
+                this.InicializarSolucion();
+                bool soluciones = true;
 
+                while (!(soluciones == true || (Contador >= parametros.Iteraciones)))
+                {
+                    this.AveriguarSolucion();
+                    this.Contador += 1;
+                    soluciones = CompararSoluciones(parametros.Tolerancia);
+                }
+                resultado.ResultadosEcuaciones = Solucion;
+                resultado.TipoResultado = TipoResultado.Ecuacion;               
+            }
             return resultado;
         }
 
-        public void DiagonalmenteDominante()
+        public bool CompararSoluciones(decimal tolerancia)
         {
-            //Verificar si esta bien y devolver un resultado.
+            bool Ok = true; //True --> Error relativo menor a tolerancia
+
+            for (int i = 0; i <= Solucion.Count - 1; i++)
+            {
+                if (((Solucion[i] - SolucionAnterior[i]) / Solucion[i]) > tolerancia)
+                {
+                    Ok = false;
+                }
+            }
+            return Ok;
+        }
+
+        public bool DiagonalmenteDominante()
+        {
+            bool resultado = true;
+
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
+            {
+                decimal suma = 0;
+
+                for (int x = 0; x <= ListaOriginal[i].Count - 1; x++)
+                {
+                    if (x != i)
+                    {
+                        suma += ListaOriginal[i][x];
+                    }
+                }
+
+                if (Math.Abs(ListaOriginal[i][i]) <= suma)
+                {
+                    resultado = false;
+                }
+            }
+            return resultado;
         }
 
         public void DespejarIncognitas()
@@ -151,8 +193,8 @@ namespace AnalisisNumerico.Logica.Unidad_2
                 List<decimal> Ecuacion = new List<decimal>();
                 decimal valor = ListaOriginal[i][i];
 
-                for (int x = 0; x <= ListaOriginal[i].Count-1; x++)
-                {                    
+                for (int x = 0; x <= ListaOriginal[i].Count - 1; x++)
+                {
                     if (x == i)
                     {
                         Ecuacion.Add(0);
@@ -177,25 +219,28 @@ namespace AnalisisNumerico.Logica.Unidad_2
         {
             this.SolucionAnterior = new List<decimal>(Solucion);
 
-            for (int filas = 0; filas <= IncognitasDespejadas.Count-1; filas++)
+            for (int filas = 0; filas <= IncognitasDespejadas.Count - 1; filas++)
             {
                 decimal total = 0;
-                for (int columnas = 0; columnas <= IncognitasDespejadas[filas].Count-2; columnas++)
+                for (int columnas = 0; columnas <= IncognitasDespejadas[filas].Count - 2; columnas++)
                 {
-                    decimal resultado = IncognitasDespejadas[filas][columnas]*Solucion[columnas];
+                    decimal resultado = IncognitasDespejadas[filas][columnas] * Solucion[columnas];
                     total += resultado;
                 }
                 total += IncognitasDespejadas[filas][IncognitasDespejadas.Count];
-                this.Solucion[filas] = Math.Round(total,4);          
+                this.Solucion[filas] = Math.Round(total, 4);
             }
         }
 
         public void InicializarSolucion()
         {
-            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
                 this.Solucion.Add(0);
+                this.SolucionAnterior.Add(0);
             }
         }
+
+
     }
 }

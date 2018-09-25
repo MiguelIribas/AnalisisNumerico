@@ -79,8 +79,6 @@ namespace AnalisisNumerico.UI
                 Sistema.Add(Ecuacion);
             }
 
-
-            //revisar
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
 
             if (comboMetodo.Text=="GAUSS-JORDAN")
@@ -97,16 +95,24 @@ namespace AnalisisNumerico.UI
                 parametros.Iteraciones = Convert.ToInt32(txtboxIteraciones.Text);
                 parametros.Tolerancia=Convert.ToDecimal(txtboxTolerancia.Text);
                 resultado = MetodosEcuaciones.ResolverEcuacionGaussSeidel(parametros);
-            }
-            
+            }                
 
-            if (resultado.TipoResultado==TipoResultado.Ecuacion)
+            switch (resultado.TipoResultado)
             {
-                this.Resultado.Visible = true;
-                this.Resultado.Text = "SE ENCONTRARON LOS VALORES DE LAS INCOGNITAS CORRECTAMENTE";
+                case TipoResultado.Ecuacion:
+                    this.Resultado.Visible = true;
+                    this.Resultado.Height = 40;
+                    this.Resultado.Text = "SE ENCONTRARON LOS VALORES DE LAS INCOGNITAS CORRECTAMENTE";
+                    this.DibujarGrillaResultado(incognitas, resultado.ResultadosEcuaciones);
+                    break;
+                case TipoResultado.NoDD:
+                    this.Resultado.Visible = true;
+                    this.Resultado.Height = 80;
+                    this.Resultado.Text = "EL SISTEMA INGRESADO NO ES DIAGONALMENTE DOMINANTE. INGRESE NUEVAMENTE";
+                    break;
+                default:
+                    break;
             }
-
-            this.DibujarGrillaResultado(incognitas, resultado.ResultadosEcuaciones);
         }
 
         private void DibujarGrillaResultado(int incognitas, List<decimal> Valores)
