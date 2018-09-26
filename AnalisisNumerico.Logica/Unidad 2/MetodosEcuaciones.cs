@@ -123,28 +123,43 @@ namespace AnalisisNumerico.Logica.Unidad_2
         {
             ResultadoEcuaciones resultado = new ResultadoEcuaciones();
             this.ListaOriginal = parametros.ValoresIniciales;
-            this.AcomodarFilas();
+
             bool DD = this.DiagonalmenteDominante();
+
+            bool FilasReacomodadas = false;
 
             if (DD == false)
             {
-                resultado.TipoResultado = TipoResultado.NoDD;
-                resultado.ResultadosEcuaciones = new List<decimal>();
+                FilasReacomodadas = this.AcomodarFilas();
+
+                if (FilasReacomodadas == false)
+                {
+                    resultado.TipoResultado = TipoResultado.NoDD;
+                    resultado.ResultadosEcuaciones = new List<decimal>();
+                    return resultado;
+                }
+            }
+
+            this.DespejarIncognitas();
+            this.InicializarSolucion();
+            bool soluciones = false;
+
+            while (!(soluciones == true || (Contador >= parametros.Iteraciones)))
+            {
+                this.AveriguarSolucion();
+                this.Contador += 1;
+                soluciones = CompararSoluciones(parametros.Tolerancia);
+            }
+
+            if (FilasReacomodadas == true)
+            {
+                resultado.ResultadosEcuaciones = Solucion;
+                resultado.TipoResultado = TipoResultado.DD;
             }
             else
             {
-                this.DespejarIncognitas();
-                this.InicializarSolucion();
-                bool soluciones = false;
-
-                while (!(soluciones == true || (Contador >= parametros.Iteraciones)))
-                {
-                    this.AveriguarSolucion();
-                    this.Contador += 1;
-                    soluciones = CompararSoluciones(parametros.Tolerancia);
-                }
                 resultado.ResultadosEcuaciones = Solucion;
-                resultado.TipoResultado = TipoResultado.Ecuacion;               
+                resultado.TipoResultado = TipoResultado.Ecuacion;
             }
             return resultado;
         }
@@ -160,7 +175,7 @@ namespace AnalisisNumerico.Logica.Unidad_2
                     contador += 1;
                 }
             }
-            if (contador==Solucion.Count)
+            if (contador == Solucion.Count)
             {
                 Ok = true;
             }
@@ -246,30 +261,32 @@ namespace AnalisisNumerico.Logica.Unidad_2
             }
         }
 
-        public void AcomodarFilas()
+        public bool AcomodarFilas()
         {
             List<List<decimal>> resultado = new List<List<decimal>>();
             List<List<decimal>> original = new List<List<decimal>>(ListaOriginal);
 
-            for (int i = 0; i <= ListaOriginal.Count-1; i++)
+            for (int i = 0; i <= ListaOriginal.Count - 1; i++)
             {
                 decimal mayor = ListaOriginal[i][i];
                 int fila = i;
 
-                for (int x = 0; x < ListaOriginal[i].Count-1; x++)
+                for (int x = 0; x < ListaOriginal[i].Count - 1; x++)
                 {
-                    if (x!=i)
+                    if (x != i)
                     {
-                        if (Math.Abs(ListaOriginal[x][i])>=mayor)
+                        if (Math.Abs(ListaOriginal[x][i]) >= mayor)
                         {
                             mayor = Math.Abs(ListaOriginal[x][i]);
                             fila = x;
                         }
                     }
                 }
-                resultado.Add(original[fila]);              
+                resultado.Add(original[fila]);
             }
             this.ListaOriginal = new List<List<decimal>>(resultado);
+
+            return this.DiagonalmenteDominante();
         }
 
     }

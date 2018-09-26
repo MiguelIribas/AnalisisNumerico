@@ -136,7 +136,7 @@
             this.GrillaResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GrillaResultado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.GrillaResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaResultado.Location = new System.Drawing.Point(172, 478);
+            this.GrillaResultado.Location = new System.Drawing.Point(173, 505);
             this.GrillaResultado.Name = "GrillaResultado";
             this.GrillaResultado.Size = new System.Drawing.Size(535, 81);
             this.GrillaResultado.TabIndex = 48;
@@ -146,7 +146,7 @@
             this.Resultado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Resultado.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.Resultado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Resultado.Location = new System.Drawing.Point(74, 411);
+            this.Resultado.Location = new System.Drawing.Point(74, 385);
             this.Resultado.Name = "Resultado";
             this.Resultado.Size = new System.Drawing.Size(712, 40);
             this.Resultado.TabIndex = 49;

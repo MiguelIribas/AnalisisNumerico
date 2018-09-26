@@ -110,6 +110,12 @@ namespace AnalisisNumerico.UI
                     this.Resultado.Height = 80;
                     this.Resultado.Text = "EL SISTEMA INGRESADO NO ES DIAGONALMENTE DOMINANTE. INGRESE NUEVAMENTE";
                     break;
+                case TipoResultado.DD:
+                    this.Resultado.Visible = true;
+                    this.Resultado.Height = 100;
+                    this.Resultado.Text = "EL SISTEMA INGRESADO NO ES DIAGONALMENTE DOMINANTE. SE REACOMODARON LAS FILAS Y SE ENCONTRARON LOS VALORES DE LAS INCOGNITAS.";
+                    this.DibujarGrillaResultado(incognitas, resultado.ResultadosEcuaciones);
+                    break;
                 default:
                     break;
             }
