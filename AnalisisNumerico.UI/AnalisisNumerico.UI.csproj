@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioMinimosCuadrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMinimosCuadrados.Designer.cs">
+      <DependentUpon>FormularioMinimosCuadrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unidad 2\FormularioSistemasEcuaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormularioMinimosCuadrados.resx">
+      <DependentUpon>FormularioMinimosCuadrados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Unidad 2\FormularioSistemasEcuaciones.resx">
       <DependentUpon>FormularioSistemasEcuaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,7 +125,9 @@
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Unidad 3\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

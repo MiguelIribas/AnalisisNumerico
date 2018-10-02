@@ -48,6 +48,7 @@
     <Compile Include="Unidad 1\MetodosCerrados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unidad 2\MetodosEcuaciones.cs" />
+    <Compile Include="Unidad 3\MinimosCuadrados.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="docs\member-search-index.zip" />

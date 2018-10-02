@@ -61,3 +61,4 @@ D:\Analisis Numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.Qua
 E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 E:\Analisis numerico\AnalisisNumerico.UI\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioSistemasEcuaciones.resources
+E:\Analisis numerico\AnalisisNumerico.UI\obj\Debug\AnalisisNumerico.UI.FormularioMinimosCuadrados.resources

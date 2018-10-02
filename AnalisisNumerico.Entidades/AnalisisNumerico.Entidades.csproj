@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjusteDeCurvas\IMinimosCuadrados.cs" />
+    <Compile Include="AjusteDeCurvas\ParametrosMinimosCuadrados.cs" />
+    <Compile Include="AjusteDeCurvas\ResultadoMinimosCuadrados.cs" />
     <Compile Include="Ecuaciones\IEcuaciones.cs" />
     <Compile Include="Ecuaciones\ParametrosEcuaciones.cs" />
     <Compile Include="Ecuaciones\ParametrosGaussSeidel.cs" />

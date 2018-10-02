@@ -102,6 +102,7 @@
             this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Name = "rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem";
             this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Size = new System.Drawing.Size(384, 22);
             this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Text = "REGRESION POR MINIMOS CUADRADOS";
+            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Click += new System.EventHandler(this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem_Click);
             // 
             // pOLINOMIOSDELAGRANGEToolStripMenuItem
             // 
