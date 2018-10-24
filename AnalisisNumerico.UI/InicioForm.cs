@@ -48,7 +48,7 @@ namespace AnalisisNumerico.UI
             FormularioSistemasEcuaciones.ShowDialog();
         }
 
-        private void rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aJUSTEDECURVASToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormularioMinimosCuadrados FormularioMinimosCuadrados = Program.container.GetInstance<FormularioMinimosCuadrados>();
             FormularioMinimosCuadrados.Owner = this;

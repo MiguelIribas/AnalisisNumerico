@@ -35,8 +35,6 @@
             this.mETODOSABIERTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sISTEMADEECUACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUSTEDECURVASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOLINOMIOSDELAGRANGEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNTEGRACIONNUMERICAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,25 +88,10 @@
             // 
             // aJUSTEDECURVASToolStripMenuItem
             // 
-            this.aJUSTEDECURVASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem,
-            this.pOLINOMIOSDELAGRANGEToolStripMenuItem});
             this.aJUSTEDECURVASToolStripMenuItem.Name = "aJUSTEDECURVASToolStripMenuItem";
             this.aJUSTEDECURVASToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.aJUSTEDECURVASToolStripMenuItem.Text = "AJUSTE DE CURVAS";
-            // 
-            // rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem
-            // 
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Name = "rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem";
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Size = new System.Drawing.Size(384, 22);
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Text = "REGRESION POR MINIMOS CUADRADOS";
-            this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem.Click += new System.EventHandler(this.rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem_Click);
-            // 
-            // pOLINOMIOSDELAGRANGEToolStripMenuItem
-            // 
-            this.pOLINOMIOSDELAGRANGEToolStripMenuItem.Name = "pOLINOMIOSDELAGRANGEToolStripMenuItem";
-            this.pOLINOMIOSDELAGRANGEToolStripMenuItem.Size = new System.Drawing.Size(384, 22);
-            this.pOLINOMIOSDELAGRANGEToolStripMenuItem.Text = "POLINOMIOS DE LAGRANGE";
+            this.aJUSTEDECURVASToolStripMenuItem.Click += new System.EventHandler(this.aJUSTEDECURVASToolStripMenuItem_Click);
             // 
             // iNTEGRACIONNUMERICAToolStripMenuItem
             // 
@@ -166,8 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem mETODOSABIERTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sISTEMADEECUACIONESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aJUSTEDECURVASToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rEGRESIONPORMINIMOSCUADRADOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pOLINOMIOSDELAGRANGEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNTEGRACIONNUMERICAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem;

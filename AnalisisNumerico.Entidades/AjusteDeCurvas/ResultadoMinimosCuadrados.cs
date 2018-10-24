@@ -8,7 +8,9 @@ namespace AnalisisNumerico.Entidades.AjusteDeCurvas
 {
     public class ResultadoMinimosCuadrados
     {
-        public decimal Pendiente { get; set; }
-        public decimal Ordenada { get; set; }
+        public string RectaMejorAjuste { get; set; }
+        public string Ajuste { get; set; }
+        public decimal CoeficientedeCorrelacion { get; set; }
+        public decimal Imagen { get; set; }
     }
 }

@@ -8,6 +8,10 @@ namespace AnalisisNumerico.Entidades.AjusteDeCurvas
 {
     public interface IMinimosCuadrados
     {
-        ResultadoMinimosCuadrados ResolverCurva(ParametrosMinimosCuadrados parametros);
+        ResultadoMinimosCuadrados ResolverCurvaLineal(ParametrosMinimosCuadrados parametros);
+
+        ResultadoMinimosCuadrados ResolverCurvaPolinomial(ParametrosMinimosCuadrados parametros);
+
+        ResultadoMinimosCuadrados ResolverPolinomioLagrange(ParametrosMinimosCuadrados parametros);
     }
 }

@@ -10,5 +10,7 @@ namespace AnalisisNumerico.Entidades.AjusteDeCurvas
     {
         public List<decimal> ValoresX { get; set; }
         public List<decimal> ValoresY { get; set; }
+        public int Grado { get; set; }
+        public decimal ValorX { get; set; }
     }
 }
