@@ -101,7 +101,6 @@ namespace AnalisisNumerico.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            this.btnCalcular.Enabled = false;
             List<decimal> ValoresX = new List<decimal>();
             List<decimal> ValoresY = new List<decimal>();
 
@@ -153,8 +152,11 @@ namespace AnalisisNumerico.UI
                     }
 
                     parametros.Grado = Convert.ToInt32(txtGrado.Text);
-                    parametros.ValorX = Convert.ToDecimal(textBoxValorX.Text);
-
+                    if (textBoxValorX.Text!="")
+                    {
+                        parametros.ValorX = Convert.ToDecimal(textBoxValorX.Text);
+                    }
+                    
                     resultado = MinimosCuadrados.ResolverCurvaPolinomial(parametros);
 
                     this.labelResultado.Visible = true;

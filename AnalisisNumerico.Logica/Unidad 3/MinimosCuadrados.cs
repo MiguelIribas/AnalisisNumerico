@@ -87,7 +87,24 @@ namespace AnalisisNumerico.Logica.Unidad_3
 
             ResultadoEcuaciones Incognitas = GaussJordan.ResolverEcuacionGaussJordan(new ParametrosEcuaciones { ValoresIniciales = SistemaResolver });
 
-            ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
+            List<int> ListaIndices = new List<int>();
+            for (int i = 0; i <= parametros.Grado; i++)
+            {
+                ListaIndices.Add(i);
+            }
+
+            string Recta = "Y = ";
+            decimal ValorY = 0;
+            for (int i = parametros.Grado; i >= 0; i--)
+            {
+                Recta += "(" + (Convert.ToString(Math.Round(Incognitas.ResultadosEcuaciones[i], 4))) + "x^(" + ListaIndices[i] + "))";
+                ValorY += (Incognitas.ResultadosEcuaciones[i] * Convert.ToDecimal(Math.Pow(Convert.ToDouble(parametros.ValorX), (Convert.ToDouble(ListaIndices[i])))));
+
+                if (i != 0)
+                {
+                    Recta += "+";
+                }
+            }           
 
             decimal Sr = 0;
 
@@ -111,31 +128,13 @@ namespace AnalisisNumerico.Logica.Unidad_3
 
             foreach (var y in parametros.ValoresY)
             {
-                St += Convert.ToDecimal(Math.Pow(Convert.ToDouble((y - yPrima)), 2));
+                St += Convert.ToDecimal(Math.Pow(Convert.ToDouble((y - yPrima)), parametros.Grado));
             }
 
-            decimal CoeficienteCorrelacion = Convert.ToDecimal(Math.Sqrt((Convert.ToDouble(St) - Convert.ToDouble(Sr)) / Convert.ToDouble(St)));
-            decimal Porcentaje = CoeficienteCorrelacion * 100;
+            decimal CoeficienteCorrelacion = Convert.ToDecimal(Math.Sqrt(Math.Abs((Convert.ToDouble(St) - Convert.ToDouble(Sr))) / Convert.ToDouble(St)));
+            decimal Porcentaje = CoeficienteCorrelacion * 100;           
 
-
-            List<int> ListaIndices = new List<int>();
-            for (int i = 0; i <= parametros.Grado; i++)
-            {
-                ListaIndices.Add(i);
-            }
-
-            string Recta = "Y = ";
-            decimal ValorY = 0;
-            for (int i = parametros.Grado; i >= 0; i--)
-            {
-                Recta +="("+(Convert.ToString(Math.Round(Incognitas.ResultadosEcuaciones[i], 4))) + "x^(" + ListaIndices[i]+"))";
-                ValorY += (Incognitas.ResultadosEcuaciones[i] * Convert.ToDecimal(Math.Pow(Convert.ToDouble(parametros.ValorX), (Convert.ToDouble(ListaIndices[i])))));
-
-                if (i!=0)
-                {
-                    Recta += "+";
-                }
-            }
+            ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
             resultado.RectaMejorAjuste = Recta;
             resultado.Imagen = ValorY;
 
@@ -147,6 +146,7 @@ namespace AnalisisNumerico.Logica.Unidad_3
             {
                 resultado.Ajuste = "NO ACEPTABLE";
             }
+
             resultado.CoeficientedeCorrelacion = Math.Round(Porcentaje, 4);
 
             return resultado;
