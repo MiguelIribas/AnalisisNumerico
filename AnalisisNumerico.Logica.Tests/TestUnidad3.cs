@@ -31,7 +31,22 @@ namespace AnalisisNumerico.Logica.Tests
         }
 
         [TestMethod]
-        public void Ejercicio2()
+        public void Ejercicio2a()
+        {
+            MinimosCuadrados minimos = new MinimosCuadrados();
+
+            ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
+
+            parametros.ValoresX = new List<decimal>() { -1, 0, 2, 3, 5, 6 };
+            parametros.ValoresY = new List<decimal>() { 6, 4, 1, 1, 2, 5 };
+
+            ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
+
+            resultado = minimos.ResolverCurvaLineal(parametros);
+        }
+
+        [TestMethod]
+        public void Ejercicio2b()
         {
             MinimosCuadrados minimos = new MinimosCuadrados();
 
@@ -48,7 +63,7 @@ namespace AnalisisNumerico.Logica.Tests
         }
 
         [TestMethod]
-        public void Ejercicio2Lagrange()
+        public void Ejercicio2c()
         {
             MinimosCuadrados minimos = new MinimosCuadrados();
 
@@ -61,6 +76,37 @@ namespace AnalisisNumerico.Logica.Tests
             ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
 
             resultado = minimos.ResolverPolinomioLagrange(parametros);
+        }
+
+        [TestMethod]
+        public void Ejercicio3a()
+        {
+            MinimosCuadrados minimos = new MinimosCuadrados();
+
+            ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
+
+            parametros.ValoresX = new List<decimal>() {0,2,3,4,6,10 };
+            parametros.ValoresY = new List<decimal>() { 36,30,28,27,26,25.2M};
+
+            ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
+
+            resultado = minimos.ResolverCurvaLineal(parametros);
+        }
+
+        [TestMethod]
+        public void Ejercicio3b()
+        {
+            MinimosCuadrados minimos = new MinimosCuadrados();
+
+            ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
+
+            parametros.ValoresX = new List<decimal>() { 0, 2, 3, 4, 6, 10 };
+            parametros.ValoresY = new List<decimal>() { 12,16,18,20,23,24 };
+            parametros.Grado = 2;
+
+            ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
+
+            resultado = minimos.ResolverCurvaPolinomial(parametros);
         }
 
         [TestMethod]
