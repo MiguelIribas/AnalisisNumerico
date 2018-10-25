@@ -23,6 +23,11 @@ namespace AnalisisNumerico.Logica.Tests
             ResultadoMinimosCuadrados resultado = new ResultadoMinimosCuadrados();
 
             resultado = minimos.ResolverCurvaLineal(parametros);
+
+            string recta = "Y = (1,4384x - 2,8762)";
+            decimal CoeficienteCorrelacion = 96.7211M;
+            Assert.AreEqual(resultado.RectaMejorAjuste, recta);
+            Assert.AreEqual(resultado.CoeficientedeCorrelacion, CoeficienteCorrelacion);
         }
 
         [TestMethod]
