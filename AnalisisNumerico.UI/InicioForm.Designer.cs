@@ -102,12 +102,7 @@
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Name = "iNTEGRACIONNUMERICAToolStripMenuItem";
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Text = "INTEGRACION NUMERICA";
-            // 
-            // tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem
-            // 
-            this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem.Name = "tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem";
-            this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
-            this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem.Text = "TRAPECIO SIMPLE Y MULTIPLE";
+            this.iNTEGRACIONNUMERICAToolStripMenuItem.Click += new System.EventHandler(this.iNTEGRACIONNUMERICAToolStripMenuItem_Click);
             // 
             // sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem
             // 

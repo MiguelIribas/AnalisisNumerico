@@ -54,5 +54,13 @@ namespace AnalisisNumerico.UI
             FormularioMinimosCuadrados.Owner = this;
             FormularioMinimosCuadrados.ShowDialog();
         }
+
+        private void iNTEGRACIONNUMERICAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioIntegracionNumerica FormularioIntegracionNumerica = Program.container.GetInstance<FormularioIntegracionNumerica>();
+            FormularioIntegracionNumerica.Owner = this;
+            FormularioIntegracionNumerica.ShowDialog();
+        }
+
     }
 }

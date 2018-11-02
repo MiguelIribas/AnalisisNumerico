@@ -49,10 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormularioMinimosCuadrados.cs">
+    <Compile Include="FormularioIntegracionNumerica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioMinimosCuadrados.Designer.cs">
+    <Compile Include="FormularioIntegracionNumerica.Designer.cs">
+      <DependentUpon>FormularioIntegracionNumerica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad 3\FormularioMinimosCuadrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad 3\FormularioMinimosCuadrados.Designer.cs">
       <DependentUpon>FormularioMinimosCuadrados.cs</DependentUpon>
     </Compile>
     <Compile Include="Unidad 2\FormularioSistemasEcuaciones.cs">
@@ -91,7 +97,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormularioMinimosCuadrados.resx">
+    <EmbeddedResource Include="FormularioIntegracionNumerica.resx">
+      <DependentUpon>FormularioIntegracionNumerica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad 3\FormularioMinimosCuadrados.resx">
       <DependentUpon>FormularioMinimosCuadrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad 2\FormularioSistemasEcuaciones.resx">
@@ -126,7 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Unidad 3\" />
+    <Folder Include="Unidad 4\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

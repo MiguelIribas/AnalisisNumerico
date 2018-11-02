@@ -47,6 +47,9 @@
     <Compile Include="Ecuaciones\ParametrosEcuaciones.cs" />
     <Compile Include="Ecuaciones\ParametrosGaussSeidel.cs" />
     <Compile Include="Ecuaciones\ResultadoEcuaciones.cs" />
+    <Compile Include="IntegracionNumerica\IIntegracionNumerica.cs" />
+    <Compile Include="IntegracionNumerica\ParametrosIntegracionNumerica.cs" />
+    <Compile Include="IntegracionNumerica\ResultadoIntegracionNumerica.cs" />
     <Compile Include="Raices\IMetodosAbiertos.cs" />
     <Compile Include="Raices\IMetodosCerrados.cs" />
     <Compile Include="Raices\ParametrosRaiz.cs" />
