@@ -36,9 +36,6 @@
             this.sISTEMADEECUACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aJUSTEDECURVASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNTEGRACIONNUMERICAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sIMPSON38ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,26 +92,10 @@
             // 
             // iNTEGRACIONNUMERICAToolStripMenuItem
             // 
-            this.iNTEGRACIONNUMERICAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem,
-            this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem,
-            this.sIMPSON38ToolStripMenuItem});
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Name = "iNTEGRACIONNUMERICAToolStripMenuItem";
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Text = "INTEGRACION NUMERICA";
             this.iNTEGRACIONNUMERICAToolStripMenuItem.Click += new System.EventHandler(this.iNTEGRACIONNUMERICAToolStripMenuItem_Click);
-            // 
-            // sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem
-            // 
-            this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem.Name = "sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem";
-            this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
-            this.sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem.Text = "SIMPSON 1/3 SIMPLE Y MULTIPLE";
-            // 
-            // sIMPSON38ToolStripMenuItem
-            // 
-            this.sIMPSON38ToolStripMenuItem.Name = "sIMPSON38ToolStripMenuItem";
-            this.sIMPSON38ToolStripMenuItem.Size = new System.Drawing.Size(328, 22);
-            this.sIMPSON38ToolStripMenuItem.Text = "SIMPSON 3/8";
             // 
             // InicioForm
             // 
@@ -145,8 +126,5 @@
         private System.Windows.Forms.ToolStripMenuItem sISTEMADEECUACIONESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aJUSTEDECURVASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNTEGRACIONNUMERICAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tRAPECIOSIMPLEYMULTIPLEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sIMPSON13SIMPLEYMULTIPLEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sIMPSON38ToolStripMenuItem;
     }
 }

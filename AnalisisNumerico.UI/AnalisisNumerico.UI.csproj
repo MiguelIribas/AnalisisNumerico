@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormularioIntegracionNumerica.cs">
+    <Compile Include="Unidad 4\FormularioIntegracionNumerica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioIntegracionNumerica.Designer.cs">
+    <Compile Include="Unidad 4\FormularioIntegracionNumerica.Designer.cs">
       <DependentUpon>FormularioIntegracionNumerica.cs</DependentUpon>
     </Compile>
     <Compile Include="Unidad 3\FormularioMinimosCuadrados.cs">
@@ -97,7 +97,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormularioIntegracionNumerica.resx">
+    <EmbeddedResource Include="Unidad 4\FormularioIntegracionNumerica.resx">
       <DependentUpon>FormularioIntegracionNumerica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad 3\FormularioMinimosCuadrados.resx">
@@ -134,9 +134,7 @@
       <Name>AnalisisNumerico.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unidad 4\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

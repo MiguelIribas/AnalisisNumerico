@@ -121,13 +121,14 @@ namespace AnalisisNumerico.UI
 
             labelValorIntegral.Visible = true;
             txtboxValorIntegral.Visible = true;
-            txtboxValorIntegral.Text = Convert.ToString(resultado.ValorIntegral);           
+            txtboxValorIntegral.Text = Convert.ToString(Math.Abs(Math.Round(resultado.ValorIntegral,4)));           
         }
 
         private void btnLimpiarPantalla_Click(object sender, EventArgs e)
         {
             labelValorIntegral.Visible = false;
             txtboxValorIntegral.Visible = false;
+            txtboxValorIntegral.Text = "";
         }
     }
 }

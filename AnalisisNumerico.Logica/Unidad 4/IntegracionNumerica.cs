@@ -182,8 +182,6 @@ namespace AnalisisNumerico.Logica.Unidad_4
             var expresion = new Expression(nombre, funcion, argumento);
             var fx = expresion.calculate();
             return fx;
-        }
-
-        
+        }       
     }
 }
