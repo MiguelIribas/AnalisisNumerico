@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioMinimosCuadrados));
             this.labelLineal = new System.Windows.Forms.Label();
             this.Metodo = new System.Windows.Forms.Label();
             this.comboMetodo = new System.Windows.Forms.ComboBox();
@@ -350,6 +351,7 @@
             this.Controls.Add(this.comboMetodo);
             this.Controls.Add(this.btnLimpiarPantalla);
             this.Controls.Add(this.labelGaussJordan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioMinimosCuadrados";
             this.Load += new System.EventHandler(this.FormularioMinimosCuadrados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).EndInit();

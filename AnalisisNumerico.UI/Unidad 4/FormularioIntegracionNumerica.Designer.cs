@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioIntegracionNumerica));
             this.txtBoxExtremo1 = new System.Windows.Forms.TextBox();
             this.labelExtremo1 = new System.Windows.Forms.Label();
             this.txtboxCantidadIntervalos = new System.Windows.Forms.TextBox();
@@ -255,8 +256,9 @@
             this.Controls.Add(this.Metodo);
             this.Controls.Add(this.comboMetodo);
             this.Controls.Add(this.btnLimpiarPantalla);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioIntegracionNumerica";
-            this.Text = "FormularioIntegracionNumerica";
+            this.Text = "INTEGRACION NUMERICA";
             this.Load += new System.EventHandler(this.FormularioIntegracionNumerica_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
