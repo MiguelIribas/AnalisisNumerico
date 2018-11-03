@@ -151,6 +151,8 @@ namespace AnalisisNumerico.Logica.Unidad_4
 
             ResultadoIntegracionNumerica resultado = new ResultadoIntegracionNumerica();
             resultado.ValorIntegral = Convert.ToDecimal(Simpson13+Convert.ToDouble(Simpson38));
+            resultado.Simpson13 = Convert.ToDecimal(Simpson13);
+            resultado.Simpson38 = Convert.ToDecimal(Simpson38);
 
             return resultado;
         }

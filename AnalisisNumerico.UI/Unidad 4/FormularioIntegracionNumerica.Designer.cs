@@ -48,6 +48,10 @@
             this.labelSimpsonSimple = new System.Windows.Forms.Label();
             this.labelSimpsonMultiple = new System.Windows.Forms.Label();
             this.labelSimpson38 = new System.Windows.Forms.Label();
+            this.txtSimpson13 = new System.Windows.Forms.TextBox();
+            this.lblSimpson13 = new System.Windows.Forms.Label();
+            this.txtSimpson38 = new System.Windows.Forms.TextBox();
+            this.lblSimpson38 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBoxExtremo1
@@ -89,7 +93,7 @@
             // txtboxValorIntegral
             // 
             this.txtboxValorIntegral.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxValorIntegral.Location = new System.Drawing.Point(372, 360);
+            this.txtboxValorIntegral.Location = new System.Drawing.Point(363, 442);
             this.txtboxValorIntegral.Name = "txtboxValorIntegral";
             this.txtboxValorIntegral.Size = new System.Drawing.Size(127, 32);
             this.txtboxValorIntegral.TabIndex = 109;
@@ -98,7 +102,7 @@
             // 
             this.labelValorIntegral.AutoSize = true;
             this.labelValorIntegral.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValorIntegral.Location = new System.Drawing.Point(198, 367);
+            this.labelValorIntegral.Location = new System.Drawing.Point(189, 449);
             this.labelValorIntegral.Name = "labelValorIntegral";
             this.labelValorIntegral.Size = new System.Drawing.Size(150, 19);
             this.labelValorIntegral.TabIndex = 108;
@@ -232,11 +236,51 @@
             this.labelSimpson38.TabIndex = 126;
             this.labelSimpson38.Text = "SIMPSON 3/8";
             // 
+            // txtSimpson13
+            // 
+            this.txtSimpson13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSimpson13.Location = new System.Drawing.Point(363, 335);
+            this.txtSimpson13.Name = "txtSimpson13";
+            this.txtSimpson13.Size = new System.Drawing.Size(127, 32);
+            this.txtSimpson13.TabIndex = 128;
+            // 
+            // lblSimpson13
+            // 
+            this.lblSimpson13.AutoSize = true;
+            this.lblSimpson13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSimpson13.Location = new System.Drawing.Point(230, 342);
+            this.lblSimpson13.Name = "lblSimpson13";
+            this.lblSimpson13.Size = new System.Drawing.Size(109, 19);
+            this.lblSimpson13.TabIndex = 127;
+            this.lblSimpson13.Text = "SIMPSON 1/3";
+            // 
+            // txtSimpson38
+            // 
+            this.txtSimpson38.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSimpson38.Location = new System.Drawing.Point(363, 385);
+            this.txtSimpson38.Name = "txtSimpson38";
+            this.txtSimpson38.Size = new System.Drawing.Size(127, 32);
+            this.txtSimpson38.TabIndex = 130;
+            // 
+            // lblSimpson38
+            // 
+            this.lblSimpson38.AutoSize = true;
+            this.lblSimpson38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSimpson38.Location = new System.Drawing.Point(230, 392);
+            this.lblSimpson38.Name = "lblSimpson38";
+            this.lblSimpson38.Size = new System.Drawing.Size(109, 19);
+            this.lblSimpson38.TabIndex = 129;
+            this.lblSimpson38.Text = "SIMPSON 3/8";
+            // 
             // FormularioIntegracionNumerica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 609);
+            this.Controls.Add(this.txtSimpson38);
+            this.Controls.Add(this.lblSimpson38);
+            this.Controls.Add(this.txtSimpson13);
+            this.Controls.Add(this.lblSimpson13);
             this.Controls.Add(this.labelSimpson38);
             this.Controls.Add(this.labelSimpsonMultiple);
             this.Controls.Add(this.labelSimpsonSimple);
@@ -286,5 +330,9 @@
         private System.Windows.Forms.Label labelSimpsonSimple;
         private System.Windows.Forms.Label labelSimpsonMultiple;
         private System.Windows.Forms.Label labelSimpson38;
+        private System.Windows.Forms.TextBox txtSimpson13;
+        private System.Windows.Forms.Label lblSimpson13;
+        private System.Windows.Forms.TextBox txtSimpson38;
+        private System.Windows.Forms.Label lblSimpson38;
     }
 }

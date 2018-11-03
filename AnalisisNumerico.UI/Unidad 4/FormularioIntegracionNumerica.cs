@@ -36,6 +36,10 @@ namespace AnalisisNumerico.UI
             labelSimpson38.Visible = false;
             labelValorIntegral.Visible = false;
             txtboxValorIntegral.Visible = false;
+            lblSimpson13.Visible = false;
+            txtSimpson13.Visible = false;
+            lblSimpson38.Visible = false;
+            txtSimpson38.Visible = false;
         }
 
         private void comboMetodo_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,14 +118,24 @@ namespace AnalisisNumerico.UI
                     parametros.Funcion = txtboxFuncion.Text;
                     parametros.CantidadSubintervalos = Convert.ToInt32(txtboxCantidadIntervalos.Text);
                     parametros.ValorExtremo1 = Convert.ToDouble(txtBoxExtremo1.Text);
-                    parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);
+                    parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);                    
                     resultado = integracion.ResolverSimpson13Multiple(parametros);
                     break;
             }
 
             labelValorIntegral.Visible = true;
             txtboxValorIntegral.Visible = true;
-            txtboxValorIntegral.Text = Convert.ToString(Math.Abs(Math.Round(resultado.ValorIntegral,4)));           
+            txtboxValorIntegral.Text = Convert.ToString(Math.Abs(Math.Round(resultado.ValorIntegral,4)));
+            if (parametros.CantidadSubintervalos%2!=0)
+            {
+                lblSimpson13.Visible = true;
+                txtSimpson13.Visible = true;
+                lblSimpson38.Visible = true;
+                txtSimpson38.Visible = true;
+
+                txtSimpson13.Text= Convert.ToString(Math.Abs(Math.Round(resultado.Simpson13, 4)));
+                txtSimpson38.Text = Convert.ToString(Math.Abs(Math.Round(resultado.Simpson38, 4)));
+            }        
         }
 
         private void btnLimpiarPantalla_Click(object sender, EventArgs e)
