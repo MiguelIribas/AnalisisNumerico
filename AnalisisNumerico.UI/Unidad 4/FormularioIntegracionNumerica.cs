@@ -14,9 +14,11 @@ namespace AnalisisNumerico.UI
 {
     public partial class FormularioIntegracionNumerica : Form
     {
-        public FormularioIntegracionNumerica()
+        private readonly IIntegracionNumerica integracionnumerica;
+        public FormularioIntegracionNumerica(IIntegracionNumerica integracionnumerica)
         {
             InitializeComponent();
+            this.integracionnumerica = integracionnumerica;
         }
 
         private void FormularioIntegracionNumerica_Load(object sender, EventArgs e)
@@ -90,7 +92,6 @@ namespace AnalisisNumerico.UI
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
-            IntegracionNumerica integracion = new IntegracionNumerica();
             ResultadoIntegracionNumerica resultado = new ResultadoIntegracionNumerica();
 
             switch (comboMetodo.SelectedIndex)
@@ -99,27 +100,27 @@ namespace AnalisisNumerico.UI
                     parametros.Funcion = txtboxFuncion.Text;
                     parametros.ValorExtremo1 =Convert.ToDouble(txtBoxExtremo1.Text);
                     parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);
-                    resultado = integracion.ResolverTrapecioSimple(parametros);               
+                    resultado = integracionnumerica.ResolverTrapecioSimple(parametros);               
                     break;
                 case 1: //Trapecio Multiple
                     parametros.Funcion = txtboxFuncion.Text;
                     parametros.CantidadSubintervalos = Convert.ToInt32(txtboxCantidadIntervalos.Text);
                     parametros.ValorExtremo1 = Convert.ToDouble(txtBoxExtremo1.Text);
                     parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);
-                    resultado = integracion.ResolverTrapecioMultiple(parametros);
+                    resultado = integracionnumerica.ResolverTrapecioMultiple(parametros);
                     break;
                 case 2: //Simpson 1/3 simple
                     parametros.Funcion = txtboxFuncion.Text;
                     parametros.ValorExtremo1 = Convert.ToDouble(txtBoxExtremo1.Text);
                     parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);
-                    resultado = integracion.ResolverSimpson13Simple(parametros);
+                    resultado = integracionnumerica.ResolverSimpson13Simple(parametros);
                     break;
                 case 3: //Simpson 1/3 Multiple
                     parametros.Funcion = txtboxFuncion.Text;
                     parametros.CantidadSubintervalos = Convert.ToInt32(txtboxCantidadIntervalos.Text);
                     parametros.ValorExtremo1 = Convert.ToDouble(txtBoxExtremo1.Text);
                     parametros.ValorExtremo2 = Convert.ToDouble(txtBoxExtremo2.Text);                    
-                    resultado = integracion.ResolverSimpson13Multiple(parametros);
+                    resultado = integracionnumerica.ResolverSimpson13Multiple(parametros);
                     break;
             }
 
@@ -142,6 +143,10 @@ namespace AnalisisNumerico.UI
         {
             labelValorIntegral.Visible = false;
             txtboxValorIntegral.Visible = false;
+            lblSimpson38.Visible = false;
+            lblSimpson13.Visible = false;
+            txtSimpson13.Visible = false;
+            txtSimpson38.Visible = false;
             txtboxValorIntegral.Text = "";
         }
     }

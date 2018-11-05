@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnalisisNumerico.Entidades.AjusteDeCurvas;
 using AnalisisNumerico.Logica.Unidad_3;
 using System.Collections.Generic;
+using AnalisisNumerico.Entidades.Ecuaciones;
 
 
 namespace AnalisisNumerico.Logica.Tests
@@ -10,10 +11,11 @@ namespace AnalisisNumerico.Logica.Tests
     [TestClass]
     public class TestUnidad3
     {
+        IEcuaciones ecuaciones;
         [TestMethod]
         public void Ejercicio1()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -33,7 +35,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio2a()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -48,7 +50,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio2b()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -65,7 +67,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio2c()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -81,7 +83,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio3a()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -96,7 +98,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio3b()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -112,7 +114,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio4a()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -131,7 +133,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio4b()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 
@@ -151,7 +153,7 @@ namespace AnalisisNumerico.Logica.Tests
         [TestMethod]
         public void Ejercicio4c()
         {
-            MinimosCuadrados minimos = new MinimosCuadrados();
+            MinimosCuadrados minimos = new MinimosCuadrados(ecuaciones);
 
             ParametrosMinimosCuadrados parametros = new ParametrosMinimosCuadrados();
 

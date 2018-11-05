@@ -18,6 +18,12 @@ namespace AnalisisNumerico.Logica.Unidad_4
         public Argument xa { get; set; }
         public Argument xb { get; set; }
         public int Subintervalos { get; set; }
+        private readonly IMinimosCuadrados MinimosCuadrados;
+
+        public IntegracionNumerica(IMinimosCuadrados minimoscuadrados)
+        {
+            this.MinimosCuadrados = minimoscuadrados;
+        }
 
         public void ObtenerParametros(ParametrosIntegracionNumerica parametros)
         {
@@ -84,14 +90,12 @@ namespace AnalisisNumerico.Logica.Unidad_4
             parametroslagrange.ValoresX = ValoresX;
             parametroslagrange.ValoresY = ValoresY;
 
-            MinimosCuadrados minimos = new MinimosCuadrados();
-
             parametroslagrange.ValorX = Convert.ToDecimal(parametros.ValorExtremo1);
-            var Rfxa = minimos.ResolverPolinomioLagrange(parametroslagrange);
+            var Rfxa = MinimosCuadrados.ResolverPolinomioLagrange(parametroslagrange);
             parametroslagrange.ValorX = Convert.ToDecimal(xi);
-            var Rfxi = minimos.ResolverPolinomioLagrange(parametroslagrange);
+            var Rfxi = MinimosCuadrados.ResolverPolinomioLagrange(parametroslagrange);
             parametroslagrange.ValorX = Convert.ToDecimal(parametros.ValorExtremo2);
-            var Rfxb = minimos.ResolverPolinomioLagrange(parametroslagrange);
+            var Rfxb = MinimosCuadrados.ResolverPolinomioLagrange(parametroslagrange);
 
             var h = (parametros.ValorExtremo2-parametros.ValorExtremo1)/ 2;
 

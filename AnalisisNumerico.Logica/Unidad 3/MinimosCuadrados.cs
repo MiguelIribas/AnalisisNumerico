@@ -15,12 +15,14 @@ namespace AnalisisNumerico.Logica.Unidad_3
         public List<decimal> ValoresXi { get; set; }
         public List<decimal> MultiplicacionXY { get; set; }
         public List<List<int>> SistemaGrado10 { get; set; }
+        private readonly IEcuaciones MetodoEcuaciones;
 
-        public MinimosCuadrados()
+        public MinimosCuadrados(IEcuaciones metodoecuaciones)
         {
             this.ValoresXi = new List<decimal>();
             this.MultiplicacionXY = new List<decimal>();
             this.SistemaGrado10 = new List<List<int>>();
+            this.MetodoEcuaciones = metodoecuaciones;
         }
 
         public ResultadoMinimosCuadrados ResolverCurvaLineal(ParametrosMinimosCuadrados parametros)
@@ -82,10 +84,9 @@ namespace AnalisisNumerico.Logica.Unidad_3
         public ResultadoMinimosCuadrados ResolverCurvaPolinomial(ParametrosMinimosCuadrados parametros)
         {
             this.InicializarSistemaGrado10();
-            MetodosEcuaciones GaussJordan = new MetodosEcuaciones();
             List<List<decimal>> SistemaResolver = this.AveriguarMatrizGrado(parametros);
 
-            ResultadoEcuaciones Incognitas = GaussJordan.ResolverEcuacionGaussJordan(new ParametrosEcuaciones { ValoresIniciales = SistemaResolver });
+            ResultadoEcuaciones Incognitas = MetodoEcuaciones.ResolverEcuacionGaussJordan(new ParametrosEcuaciones { ValoresIniciales = SistemaResolver });
 
             List<int> ListaIndices = new List<int>();
             for (int i = 0; i <= parametros.Grado; i++)

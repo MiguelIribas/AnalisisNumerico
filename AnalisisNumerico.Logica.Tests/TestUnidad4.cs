@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnalisisNumerico.Entidades.IntegracionNumerica;
 using AnalisisNumerico.Logica.Unidad_4;
+using AnalisisNumerico.Entidades.AjusteDeCurvas;
 using System;
 
 namespace AnalisisNumerico.Logica.Tests
@@ -10,11 +11,12 @@ namespace AnalisisNumerico.Logica.Tests
         [TestClass]
         public class TestUnidad2
         {
+            IMinimosCuadrados minimos;
             //EJERCICIO A
             [TestMethod]
             public void EjercicioAa()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -33,7 +35,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioAb()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -52,7 +54,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioAc()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -70,7 +72,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioAd()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -89,7 +91,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioAe()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -109,7 +111,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioBa()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -127,7 +129,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioBb()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -146,7 +148,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioBc()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -164,7 +166,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioBd()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -183,7 +185,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioBe()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -203,7 +205,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioCa()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -221,7 +223,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioCb()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -240,7 +242,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioCc()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -258,7 +260,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioCd()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
@@ -277,7 +279,7 @@ namespace AnalisisNumerico.Logica.Tests
             [TestMethod]
             public void EjercicioCe()
             {
-                IntegracionNumerica integracion = new IntegracionNumerica();
+                IntegracionNumerica integracion = new IntegracionNumerica(minimos);
 
                 ParametrosIntegracionNumerica parametros = new ParametrosIntegracionNumerica();
 
